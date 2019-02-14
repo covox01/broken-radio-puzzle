@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    width: 40%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: cadetblue;
+    border: 10px solid cadetblue;
+}
+
+.main-switch {
+    background: cadetblue;
+    height: 100px;
+    width: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.s1 {
+    height: 50px;
+    width: 20px;
+    cursor: pointer;
+    position: relative;
+    background: cadetblue;
+    position: relative;
+
+}
+
+.trigger {
+    height: 50%;
+    width: 100%;
+    background: crimson;
+    transition: all .1s ease;
+}
+
+.on {
+    transform: translateY(100%);
+}
+
+
+
