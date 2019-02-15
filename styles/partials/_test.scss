@@ -1,22 +1,25 @@
 .container {
     display: flex;
-    width: 40%;
+    // width: 50%;
     max-width: 500px;
+    min-width: 300px;
     margin: 0 auto;
     height: 100vh;
     align-items: center;
+    // justify-content: space-between;
+}
+
+.radio-body {
+    display: flex;
     justify-content: space-between;
+    border: 5px solid cadetblue;
+    width: 100%;
+    padding: 20px 40px;
+    border-radius: 10px;
 }
-
-.button {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background: cadetblue;
-    border: 10px solid cadetblue;
-    transition: all .4s ease;
+.radio-body-container {
+    width: 100%;
 }
-
 
 .main-switch {
     display: flex;
@@ -41,10 +44,9 @@
     margin: 0 auto;
     height: 20%;
     width: 170%;
-    background: crimson;
+    background: $trigger-color;
     transition: all .1s ease; 
     position: absolute;
-    box-shadow:inset 2px 2px 1px 0px darken(crimson, 10);
     top: 0;
 }
 
@@ -52,19 +54,59 @@
     transform: translateY(400%);
 }
 
-.switch-2,
-.switch-3 {
+.switch-1,
+.switch-2 {
     display: flex;
     justify-content: center;
     position: relative;
+    padding: 0 5px;
 }
 
 .trigger-1,
 .trigger-2 {
     position: absolute;
+     padding: 0 5px;
 }
 
 // .hint{
 //     background: orange;
 // }
 
+@keyframes shake {
+    25% {
+        transform: translateX(5%);
+    }
+
+    50% {
+        transform: translateX(-10%);
+    }
+    75% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(-5%);
+    }
+}
+.shake {
+    animation-name: shake;
+    animation-duration: 1s ease;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: cadetblue;
+    border: 10px solid cadetblue;
+    transition: all .4s ease;
+    cursor: pointer;
+    position: relative;
+}
+.fail {
+    background: crimson;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    display: none;
+}

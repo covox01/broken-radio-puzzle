@@ -11,24 +11,32 @@
 
 <body>
     <div class="container">
-        <div class="main-switch-container">
-            <div class="main-switch">
-                <div class="trigger" id="trigger-1"></div>
-                <audio src="assets/audio/light-switch-1.mp3" id="audioSwitch-1"></audio>
-                <audio src="assets/audio/light-switch-2.mp3" id="audioSwitch-2"></audio>
+        <div class="radio-body-container">
+            <div class="radio-body" id="radio">
+                <div class="main-switch-container">
+                    <div class="main-switch">
+                        <div class="trigger" id="trigger-0"></div>
+                        <audio src="assets/audio/light-switch-1.mp3" id="audioSwitch-1"></audio>
+                        <audio src="assets/audio/light-switch-2.mp3" id="audioSwitch-2"></audio>
+                    </div>
+                </div>  
+                <div class="s1 switch-1">
+                    <div class="trigger" id="trigger-1"></div>
+                </div>
+
+                <div class="s1 switch-2">
+                    <div class="trigger" id="trigger-2"></div>
+                </div>
+                <div class="button">
+                    <div class="fail"></div>
+                </div>
+                <audio src="assets/audio/bell.mp3" id="bell"></audio>
+                <audio src="assets/audio/dud-1.mp3" id="dud"></audio>
             </div>
         </div>  
-
-
-        <div class="s1 switch-2">
-            <div class="trigger" id="trigger-2"></div>
-        </div>
-
-        <div class="s1 switch-3">
-            <div class="trigger" id="trigger-3"></div>
-        </div>
-        <div class="button"></div>
     </div>
+    
+
     
     
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
