@@ -189,6 +189,9 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -305,4 +308,16 @@ a {
   height: 100%;
   position: absolute;
   border-radius: 50%;
-  display: none; }
+  display: none;
+  -webkit-filter: blur(7px);
+  filter: blur(7px); }
+
+.success {
+  background: #CEF4F0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  display: none;
+  -webkit-filter: blur(2px);
+  filter: blur(2px); }
