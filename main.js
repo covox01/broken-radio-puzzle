@@ -15,34 +15,30 @@ const mainSwitch = () => {
         $('#trigger-1').toggleClass('on');
         // Inserts Key(Name) and Value(Name of Switch)
         if (switchProp.sequence === 0) {
-            sequenceCheck.pop(switchProp);
             switchProp.sequence = 1;
             switchProp.status = "Incomplete"
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(0, 1, switchProp);
                 audioSwitch1.pause();
                 audioSwitch1.currentTime = 0;
                 audioSwitch1.play();
         } else if (switchProp.sequence === 1) {
-            sequenceCheck.pop(switchProp);
             switchProp.sequence = 2;
             switchProp.status = "Incomplete"
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(0, 1, switchProp);
                 audioSwitch1.pause();
                 audioSwitch1.currentTime = 0;
                 audioSwitch1.play();
         } else if (switchProp.sequence === 2) {
-            sequenceCheck.pop(switchProp);
             switchProp.sequence = 3;
             switchProp.status = "Complete"
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(0, 1, switchProp);
                 audioSwitch1.pause();
-                audioSwitch1.currentTime = 0;
+                audioSwitch1.CurrentTime = 0;
                 audioSwitch2.play();
         } else if (switchProp.sequence === 3) {
-            sequenceCheck.pop(switchProp);
             switchProp.status = "Incomplete"
             switchProp.sequence = 0;
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(0, 1, switchProp);
                 audioSwitch2.pause();
                 audioSwitch2.currentTime = 0;
                 audioSwitch1.play();
@@ -60,26 +56,24 @@ const mainSwitchStatus = (status) => {
 const switch1 = () => {
     let switchProp = {
         name: 'Switch 1',
-        sequence: 0
+        sequence: 0,
+        status: "Incomplete"
     }
     $('.switch-2').on('click', function (e) {
         e.preventDefault();
         $('#trigger-2').toggleClass('on');
         // Inserts Key(Name) and Value(Name of Switch)
         if (switchProp.sequence === 0 || switchProp.sequence === 2) {
-            sequenceCheck.pop(switchProp)
             switchProp.sequence = 0;
             switchProp.sequence = 1;
-            switchProp.status = "Incomplete";
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(1, 1, switchProp);
                 audioSwitch2.pause();
                 audioSwitch2.currentTime = 0;
                 audioSwitch1.play();
         } else if (switchProp.sequence === 1) {
-            sequenceCheck.pop(switchProp);
             switchProp.sequence = 2;
             switchProp.status = "Complete";
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(1, 1, switchProp);
                 audioSwitch1.pause();
                 audioSwitch1.currentTime = 0;
                 audioSwitch2.play();
@@ -106,19 +100,19 @@ const switch2 = () => {
         $('#trigger-3').toggleClass('on');
         // Inserts Key(Name) and Value(Name of Switch)
         if (switchProp.sequence === 0 || switchProp.sequence === 2) {
-            sequenceCheck.pop(switchProp);
+            // sequenceCheck.pop(switchProp);
             switchProp.sequence = 0;
             switchProp.sequence = 1;
             switchProp.status = "Complete";
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(2, 1, switchProp);
                 audioSwitch1.pause();
                 audioSwitch1.currentTime = 0;
                 audioSwitch2.play();
         } else if (switchProp.sequence === 1) {
-            sequenceCheck.pop(switchProp);
+            // sequenceCheck.pop(switchProp);
             switchProp.sequence = 0;
             switchProp.status = "Incomplete";
-            sequenceCheck.push(switchProp);
+            sequenceCheck.splice(2, 1, switchProp);
                 audioSwitch2.pause();
                 audioSwitch2.currentTime = 0;
                 audioSwitch1.play();
@@ -136,7 +130,7 @@ const switchStatus2 = (status) => {
 
 // --------------------
 // Test to see if sequence1 has been fulfilled
-const sequenceCheck = []
+const sequenceCheck = ["Main Switch", "Switch 1", "Switch 2"]
 
 
 
@@ -147,8 +141,6 @@ const sequenceOne = () => {
     switch2();
 
 }
-
-
 
 $(function(){
     console.log("ready");
