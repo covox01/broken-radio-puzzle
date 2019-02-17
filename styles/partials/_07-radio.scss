@@ -119,6 +119,11 @@ body {
         width: 40%;
         background-repeat: no-repeat;
     }
+        .s2-switch-length-1 {
+            grid-row: 15 / 28;
+            grid-column: 5 / 6;
+            background: $dark-accent;
+        }
 
 
 .s2-switch-2 {
@@ -137,6 +142,12 @@ body {
         height: 100%;
         width: 75%;
     }
+      .s2-switch-length-2 {
+            grid-row: 15 / 28;
+            grid-column: 11 / 12;
+            background: $dark-accent;
+        }
+
 .s2-switch-3 {
     grid-row: 12 / 30;
     grid-column: 15 / 20;
@@ -154,11 +165,57 @@ body {
         height: 100%;
         width: 50%;
     }
+    .s2-switch-length-3 {
+            grid-row: 15 / 28;
+            grid-column: 17 / 18;
+            background: $dark-accent;
+        }
+
 .sub-switch {
     grid-row: 12 / 30;
-    grid-column: 21 / 26;
+    grid-column: 20 / 26;
     width: 93%;
     border-radius: 0 5px 5px;
+    background: $secondary;
+    // border: 1px solid red;
+}
+// S2 Sub Switches
+.s2-switch-4 {
+    grid-row: 14 / 18;
+    grid-column: 20 / 26;
+    width: 93%;
+    background: $secondary;
+    border: 1px solid red;
+}
+    .s2-switch-length-4 {
+        grid-row: 16 / 17;
+        grid-column: 20 / 25;
+        background: $low-midtone;
+        margin: 0 auto;
+        width: 70%;
+    }
+
+.s2-switch-5 {
+    grid-row: 18 / 22;
+    grid-column: 20 / 26;
+    width: 93%;
+    background: $secondary;
+    border: 1px solid red;
+}
+    .s2-switch-length-5 {
+        grid-row: 19 / 20;
+        grid-column: 20 / 25;
+        background: $low-midtone;
+        margin: 0 auto;
+        display: flex;
+        width: 70%;
+        height: 100%;
+    }
+
+.s2-submit {
+    grid-row: 22 / 28;
+    grid-column: 20 / 26;
+    width: 93%;
     background: $secondary;
     border: 1px solid red;
 }
@@ -184,6 +241,38 @@ body {
     align-self: center;
     border-radius: 2px;
 }
+
+.s2-switch-4 {
+    grid-row: 14 / 18;
+    grid-column: 20 / 26;
+    width: 93%;
+    background: $secondary;
+    border: 1px solid red;
+}
+    .s2-switch-length-4 {
+        grid-row: 16 / 17;
+        grid-column: 20 / 25;
+        background: $low-midtone;
+        margin: 0 auto;
+        width: 70%;
+    }
+
+.s2-switch-5 {
+    grid-row: 18 / 22;
+    grid-column: 20 / 26;
+    width: 93%;
+    background: $secondary;
+    border: 1px solid red;
+}
+    .s2-switch-length-5 {
+        grid-row: 19 / 20;
+        grid-column: 20 / 25;
+        background: $low-midtone;
+        margin: 0 auto;
+        display: flex;
+        width: 70%;
+        height: 100%;
+    }
 
 
 
