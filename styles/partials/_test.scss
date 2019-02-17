@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     background: cadetblue;
-    height: 100px;
+    height: 300px;
     width: 20px;
     cursor: pointer;
     position: relative;
@@ -122,4 +122,8 @@
     border-radius: 50%;
     display: none;
     filter: blur(2px);
+}
+
+.ranger {
+    transform: rotate(90deg);
 }
