@@ -167,14 +167,14 @@ const submitSequence1 = () => {
         audioSwitch2.pause();
         audioSwitch1.currentTime = 0;
         audioSwitch2.currentTime = 0;
-        audioSwitch1.play();
+        audioSwitch2.play();
     }
     const audioSwitchOff = () => {
         audioSwitch1.pause();
         audioSwitch2.pause();
         audioSwitch1.currentTime = 0;
         audioSwitch2.currentTime = 0;
-        audioSwitch2.play();
+        audioSwitch1.play();
     }
 
     const audioSuccess = () => {
@@ -212,17 +212,22 @@ const submitSequence1 = () => {
         submitSequence2();
     }
 
+// Main Menu
 const mainMenu = () => {
     let ready = false
+    $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'default');
+    //Removes Attributes
+    $('.s1-switch-1, .s1-switch-2, .s1-submit').removeAttr('tabindex role');
     $('.intro-switch').on('click', function (e) {
         e.preventDefault();
         $('.intro-trigger').toggleClass('intro-on');
         if (ready === true) {
             ready = false;
-            audioSwitchOn();
+            audioSwitchOff();
         } else {
             ready = true;
-            audioSwitchOff();
+            audioSwitchOn();
+            
         }
         console.log(ready);
     })
@@ -231,21 +236,45 @@ const mainMenu = () => {
         e.preventDefault();
         if (ready === true) {
             audioSuccess();
+            $('.text, .intro, .mode').hide();
+            $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'pointer');
+
+
+            $('.s1-switch-1, .s1-switch-2, .s1-submit').attr('role', 'button');
+            $('.s1-switch-1, .s1-switch-2, .s1-submit').attr('tabindex', '0');
         } else {
             audioFail();
+            $('.intro-fail').fadeIn(50);
+            setTimeout(function(){
+                $('.intro-fail').fadeOut(50);
+            }, 800);
         }
     })
 }
-
+//Difficulty Modes
+let hardMode = false
+const settingToggle = () => {
+    $('.mode-trigger').toggleClass('mode-trigger-on');
+    $('.radiohead, .s2-trigger-1, .s2-trigger-2, .s2-trigger-3, .s2-trigger-4, .s2-trigger-5, .main-trigger, .s1-trigger-1, .s1-trigger-2').toggleClass('hard-mode');
+}
 const mode = () => {
-    let hard = () => {
-
-    }
+    $('.mode').on('click', function(e) {
+        e.preventDefault();
+        if (hardMode === false) {
+            hardMode = true;
+            settingToggle();
+            audioSwitchOn();
+        } else {
+            hardMode = false;
+            audioSwitchOff();
+            settingToggle();
+        }
+    })
 }
 //Doc Ready
-    $(function(){
-        console.log("ready");
-        mainMenu();
-        mode();
-        
-    })
+$(function(){
+    console.log("ready");
+    mainMenu();
+    mode();
+
+})

@@ -1,7 +1,7 @@
 .text {
     grid-row: 17 / 19;
     grid-column: 7 / 9;
-    z-index: 100;
+    z-index: 20;
     margin: 0 auto;
 }
 
@@ -12,7 +12,6 @@ h1 {
     word-spacing: 8px;
     align-self: center;
     color: $dark-accent;
-    z-index: 100;
     margin: 0 auto;
 }
 p {
@@ -66,7 +65,7 @@ p {
 }
 
 .intro-on {
-    transform: translateX(570%);
+    transform: translateX(567%);
     background: $accent;
 }
 // Introduction Begin Button
@@ -91,9 +90,10 @@ p {
         background: url('../assets/submit-success.svg');
         background-repeat: no-repeat;
         align-self: center;
-        height: 60%;
-        width: 45%;
+        height: 50%;
+        width: 40%;
         display: none;
+        z-index: 30;
     }
     .intro-fail {
         grid-row: 2 / 5;
@@ -101,9 +101,12 @@ p {
         background: url('../assets/submit-fail.svg');
         background-repeat: no-repeat;
         align-self: center;
-        height: 60%;
-        width: 45%;
+        // margin-left: 5%;
+        height: 50%;
+        width: 40%;
         display: none;
+        z-index: 30;
+        filter: blur(10px);
     }
 }
 //Difficulty Mode Select
@@ -133,14 +136,19 @@ p {
 }
 
 .mode-trigger {
-        background: $dark-accent;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 50%;
-        border-radius: 3px;
-    }
+    background: $dark-accent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    border-radius: 3px;
+}
+
+.mode-trigger-on {
+    background: $accent;
+    transform: translateY(100%);
+}
 
 
 
