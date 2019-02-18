@@ -1,0 +1,140 @@
+.text {
+    grid-row: 17 / 19;
+    grid-column: 7 / 9;
+    z-index: 100;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: Helvetica, Futura, sans-serif;
+    font-size: 1.8rem;
+    line-height: none;
+    word-spacing: 10px;
+    align-self: center;
+    color: $dark-accent;
+    z-index: 100;
+    margin: 0 auto;
+}
+p {
+    font-family: Helvetica, Futura, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding-top: 1.7px;
+    color: $low-midtone;
+    margin: 0 auto;
+    text-transform: none;
+}
+.intro {
+    grid-row: 12 / 30;
+    grid-column: 3 / 26;
+    display: grid;
+    grid-template-rows: repeat(18, auto);
+    grid-template-columns: repeat(23, auto);
+    width: 98%;
+    background: $secondary;
+    border-radius: 3px;
+    z-index: 10;
+    transition: all .5s ease;
+}
+//Introduction Switch
+.intro-switch {
+    grid-row: 10 / 17;
+    grid-column: 2 / 17;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(15, auto);
+    .intro-switch-length {
+        grid-row: 3 / 4;
+        grid-column: 3 / 16;
+        height: 80%;
+        align-items: center;
+        border-radius: 2px;
+        background: $dark-accent;
+        position: relative;
+        display: flex;
+        .intro-trigger {
+            position: absolute;
+            background: $low-midtone;
+            left: 0;
+            height: 220%;
+            width: 15%;
+            border-radius: 2px;
+        }
+    }
+}
+// Introduction Begin Button
+.intro-button {
+    grid-row: 10 / 17;
+    grid-column: 17 / 22;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(4, auto);
+    .intro-button-trigger {
+        grid-row: 2 / 5;
+        grid-column: 2 / 6;
+        background: url('../assets/submit.svg');
+        background-repeat: no-repeat;
+        align-self: center;
+        height: 50%;
+        width: 45%;
+    }
+    .intro-success {
+        grid-row: 2 / 5;
+        grid-column: 2 / 6;
+        background: url('../assets/submit-success.svg');
+        background-repeat: no-repeat;
+        align-self: center;
+        height: 60%;
+        width: 45%;
+        display: none;
+    }
+    .intro-fail {
+        grid-row: 2 / 5;
+        grid-column: 2 / 6;
+        background: url('../assets/submit-fail.svg');
+        background-repeat: no-repeat;
+        align-self: center;
+        height: 60%;
+        width: 45%;
+        display: none;
+    }
+}
+//Difficulty Mode Select
+.mode {
+    grid-row: 12 / 30;
+    grid-column: 28 / 34;
+    display: grid;
+    grid-template-rows: repeat(18, auto);
+    grid-template-columns: repeat(7, auto);
+    width: 85%;
+    margin: 0 auto;
+    background: $secondary; 
+    border-radius: 3px;
+    z-index: 10;
+}
+.mode-select {
+    grid-row: 4 / 16;
+    grid-column: 2 / 7;
+    display: grid;
+    grid-template-rows: repeat(12, auto);
+    grid-template-columns: repeat(5, auto);
+    background: $low-midtone;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 3px;
+}
+
+.mode-trigger {
+        background: $dark-accent;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        border-radius: 3px;
+    }
+
+
+

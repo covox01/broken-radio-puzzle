@@ -1,33 +1,60 @@
- svg {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    margin: 0 auto;
-    width: 80%;
-    // border: 1px solid red; 
-    position: relative;
+body {
+    background: $secondary;
 }
 
+button {
+    border: none;
+    transition: all 1s ease;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
 
-#s1-switch-1-trigger {
+button:focus {
+    outline: none;
+    border: 1px solid grey;
+    text-decoration: none;
+
+}
+
+div {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+input {
+    border: none;
+    background: none;
+    text-transform: none;
+}
+
+.access {
+    cursor: pointer;
+}
+
+.on-x {
+    transform: translateX(200%);
+}
+
+.intro-trigger,
+.intro-button-trigger,
+.intro-success,
+.intro-fail,
+.mode-trigger,
+.needle,
+.s2-trigger-1,
+.s2-trigger-2,
+.s2-trigger-3,
+.s2-trigger-4,
+.s2-trigger-5,
+.s2-fail,
+.s2-success,
+.btn2,
+.s1-trigger-1,
+.s1-trigger-2,
+.s1-fail,
+.s1-success {
     transition: all .2s ease;
-}
-#s1-switch-1:active #s1-switch-1-trigger  {
-        transform: translateY(2.4%);
-}
-
-#s1-switch-2-trigger {
-    transition: all .1s ease;
-}
-#s1-switch-2:active #s1-switch-2-trigger  {
-        transform: translateY(2.4%);
-}
-
-#s1-switch-2:hover {
-    cursor: pointer;
-}
-
-#s1-switch-1:hover {
-    cursor: pointer;
 }
 

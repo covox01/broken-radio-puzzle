@@ -8,106 +8,135 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <!-- Grid 1 -->
     <div class="flex">
-        <div class="container-grid">
+        <div class="outer-layer">
+            <div class="text">
+                <h1>Broken Radio.</h1>
+                <p>Please fix me.</p>
+            </div>
+            <div class="container-grid">
 
-            <!-- Radio-Body -->
-            <div class="background"></div>
-            <div class="radio-body"></div>
+                <!-- Radio-Body -->
+                <div class="background"></div>
+                <div class="radio-body"></div>
 
-            <!-- Creep -->
-            <div class="radiohead"></div>
-            <div class="channel"></div>
-            <div class="channel-length">
-                <div class="needle"></div>
-            </div>
+                <!-- Creep -->
+                <div class="radiohead"></div>
+                <div class="channel"></div>
+                <div class="channel-length">
+                    <div class="needle"></div>
+                </div>
 
-            <!-- Speaker -->
-            <div class="speaker"></div>
-            <div class="dots"></div>
-            
-            <!-- Sequence 2 Starts -->
-            <div class="sequence2"></div>   
-            <!-- S2 Switch 1 -->
-            <div id="s2-s1" class="s2-switch-1"></div>
-            <div class="hint-1"></div>
-            <div class="s2-switch-length-1">
-                <div id="s2-t1" class="s2-trigger-1"></div>
-            </div>
-            
-            <!-- S2-Switch-2 -->
-            <div id="s2-s2" class="s2-switch-2"></div>   
-            <div class="hint-2"></div>
-            <div class="s2-switch-length-2">
-                <div id="s2-t2" class="s2-trigger-2"></div>
-            </div>
-            
-            <!-- S2 Switch 3 -->
-            <div id="s2-s3" class="s2-switch-3"></div>
-            <div class="hint-3"></div>
-            <div class="s2-switch-length-3">
-                <div id="s2-t3" class="s2-trigger-3"></div>
-            </div>
+                <!-- Speaker -->
+                <div class="speaker"></div>
+                <div class="dots"></div>
+                
+                <!-- Intro Area -->               
+                <div class="intro">
+                    <div id="i-s" class="intro-switch access" role="button" tabindex="0">
+                        <div class="intro-switch-length">
+                            <div class="intro-trigger"></div>
+                        </div>
+                    </div>
+                    <div id="i-b" class="intro-button access" role="button" tabindex="0">
+                        <div class="intro-button-trigger"></div>
+                        <div class="intro-success"></div>
+                        <div class="intro-fail"></div>
+                    </div>
+                </div> 
 
-            <!-- S2 Sub Switches -->
-            <div class="sub-switch"></div>
+                <!-- Difficulty Mode Select -->
+                <div class="mode access" role="button" tabindex="0">
+                    <div class="mode-select">
+                        <div class="mode-trigger"></div>
+                    </div>
+                </div> 
+                
+                <!-- Sequence 2 Starts -->
+                <div class="sequence-2">
 
-            <!--S2 Switch 4 -->
-            <div id="s2-s4" class="s2-switch-4"></div>
-            <div class="s2-switch-length-4">
-                <div id="s2-t4" class="s2-trigger-4"></div>
-            </div>
-            
-            <!--S2 Switch 5 -->
-            <div id="s2-s5" class="s2-switch-5"></div>
-            <div class="s2-switch-length-5">
-                <div id="s2-t5" class="s2-trigger-5"></div>
-            </div>
-            
-            <!-- S2 Submit Sequence -->
-            <div id="s2-btn" class="s2-submit"></div>
-            <div class="s2-button btn2"></div>
-            <div class="s2-fail btn2"></div>
-            <div class="s2-success btn2"></div>
-            
-            <!-- Sequence 1 Starts -->
-            <!-- Main Switch -->
-            <div id="m-switch" class="main-switch"></div>
-            <div class="main-switch-length">
-                <div id="m-t" class="main-trigger"></div>
-            </div>
+                    <!-- S2 Switch 1 -->
+                    <div id="s2-s1" class="s2-switch-1 access" role="button" tabindex="0">
+                        <div class="hint-1"></div>
+                        <div class="s2-switch-length-1">
+                            <div id="s2-t1" class="s2-trigger-1"></div>
+                        </div>
+                    </div>
 
-            <!--S1 Sub Switches -->
-            <div class="main-secondary"></div>
-            <!--S1 Switch 1 -->
-            <div id="s1-s1" class="s1-switch-1"></div>
-            <div class="s1-switch-length-1">
-                <div id="s1-t1" class="s1-trigger-1"></div>
+                    <!-- S2-Switch-2 -->
+                    <div id="s2-s2" class="s2-switch-2 access" role="button" tabindex="0">
+                        <div class="hint-2"></div>
+                        <div class="s2-switch-length-2">
+                            <div id="s2-t2" class="s2-trigger-2"></div>
+                        </div>
+                    </div>
+
+                    <!-- S2 Switch 3 -->
+                    <div id="s2-s3" class="s2-switch-3 access" role="button" tabindex="0">
+                        <div class="hint-3"></div>
+                        <div class="s2-switch-length-3">
+                            <div id="s2-t3" class="s2-trigger-3"></div>
+                        </div>
+                    </div>
+
+                    <!--S2 Sub Switches -->
+                    <div class="s2-sub-switch">
+
+                        <!-- S2 Switch 4 -->
+                        <div id="s2-s4" class="s2-switch-4 access" role="button" tabindex="0">
+                            <div class="s2-switch-length-4">
+                                <div id="s2-t4" class="s2-trigger-4"></div>
+                            </div>
+                        </div>
+
+                        <!-- S2 Switch 5 -->
+                        <div id="s2-s5" class="s2-switch-5 access" role="button" tabindex="0">
+                            <div class="s2-switch-length-5">
+                                <div id="s2-t5" class="s2-trigger-5"></div>
+                            </div>
+                        </div>
+
+                        <!-- S2 Submit Sequence -->
+                        <div id="s2-btn" class="s2-submit access" role="button" tabindex="0">
+                            <div class="s2-button btn2"></div>
+                            <div class="s2-fail btn2"></div>
+                            <div class="s2-success btn2"></div>
+                        </div>
+                    </div>
+                </div>   
+            
+                <!-- Sequence 1 Starts -->
+                <!-- Main Switch -->
+                <div id="m-s" class="main-switch access" role="button" tabindex="0">
+                    <div class="main-switch-length">
+                        <div id="m-t" class="main-trigger"></div>
+                    </div>
+                </div>
+                
+                <!--S1 Sub Switches -->
+                <div class="s1-sub-switch">
+                    <!--S1 Switch 1 -->
+                    <div type="button" id="s1-s1" class="s1-switch-1 access" role="button" tabindex="0" disabled>
+                        <div class="s1-switch-length-1">
+                            <div id="s1-t1" class="s1-trigger-1"></div>
+                        </div>
+                    </div>
+                    <!--S1 Switch 2 -->
+                    <div id="s1-s2" class="s1-switch-2 access" role="button" tabindex="0" disabled>
+                        <div class="s1-switch-length-2">
+                            <div id="s1-t2" class="s1-trigger-2"></div>
+                        </div>
+                    </div>
+                    <!--S1 Submit Sequence -->
+                    <div id="s1-btn" class="s1-submit access" role="button" tabindex="0" disabled>
+                        <div class="s1-button btn1"></div>
+                        <div class="s1-fail btn1"></div>
+                        <div class="s1-success btn1"></div>
+                    </div>
+                </div>
             </div>
-            
-            <!--S1 Switch 2 -->
-            <div id="s1-s2" class="s1-switch-2"></div>
-            <div class="s1-switch-length-2">
-                <div id="s1-t2" class="s1-trigger-2"></div>
-            </div>
-            
-            <!--S1 Submit Sequence -->
-            <div id="s1-btn" class="s1-submit"></div>
-            <div class="s1-button btn1"></div>
-            <div class="s1-fail btn1"></div>
-            <div class="s1-success btn1"></div>
-            
-            <!-- Sequence 1 Ends -->
-            
         </div>
     </div>
-
-
-
-
-
-
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
     <script src="main.js"></script>
 </body>

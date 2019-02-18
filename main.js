@@ -177,8 +177,21 @@ const submitSequence1 = () => {
         switch5();
         submitSequence2();
     }
+
+
+const start = []
+const mainMenu = () => {
+
+    $('.intro-switch').on('click', function (e) {
+        e.preventDefault;
+        $('.intro-trigger').toggleClass('on-x');
+    })
+
+
+}
 //Doc Ready
     $(function(){
         console.log("ready");
         sequenceOne();
+        mainMenu();
     })

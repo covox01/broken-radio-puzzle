@@ -1,0 +1,104 @@
+.flex {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container-grid {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    display: grid;
+    height: 450px;
+    width: 750px;
+    grid-template-columns: 10px 25px repeat(37, auto) 25px 10px;
+    grid-template-rows: 10px 25px repeat(27, auto) 25px 10px;
+}
+.radio-body {
+    grid-row: 2 / 31;
+    grid-column: 2 / 41;
+    background: $primary;
+    border-radius: 3px;
+}
+.background {
+    grid-row: 1 / 32;
+    grid-column: 1 / 42;
+    display: flex;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 3px;
+    background: $low-midtone;
+}
+.radiohead {
+    grid-row: 3 / 10;
+    grid-column: 3 / 40;
+    background: $dark-accent;
+    border-radius: 3px;
+}
+.channel {
+    grid-row: 4 / 9;
+    grid-column: 4 / 24;
+    width: 98%;
+    background: $low-midtone;
+    border-radius: 3px;
+}
+.channel-length {
+    grid-row: 6 / 7;
+    grid-column: 5 / 22;
+    height: 50%;
+    display: flex;
+    align-self: center;
+    border-radius: 2px;
+    background: $secondary;
+    position: relative;
+    .needle {
+        position: absolute;
+        border-radius: 1px;
+        background: $channel-accent;
+        width: 9px;
+        height: 26px;
+        bottom: -7px;
+        left: 20%;
+    }
+}
+.speaker {
+    grid-row: 4 / 9;
+    grid-column: 25 / 39;
+    border-radius: 3px;
+    background: #52706A;
+}
+.inner-speaker {
+    grid-column: 26 / 38;
+    grid-row: 5 / 8;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-self: center;
+    height: 50%;
+    border-radius: 7px;
+}
+.dots {
+    grid-column: 26 / 38;
+    grid-row: 5 / 9;
+    background: url(../assets/dots.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.outer-layer {
+    margin: 0 auto;
+    display: grid;
+    height: 450px;
+    width: 750px;
+    grid-template-columns: 10px 25px repeat(37, auto) 25px 10px;
+    grid-template-rows: 10px 25px repeat(27, auto) 25px 10px;
+    z-index: 1000;
+    position: relative;
+}
+
