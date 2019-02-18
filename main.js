@@ -154,12 +154,46 @@ const submitSequence1 = () => {
     const sequenceCheck1 = [1, 2, 3];
     const failCheck1 = [];
 
-//Audio Name Space
-    const audioSwitch1 = $('#audioSwitch-1')[0];
-    const audioSwitch2 = $('#audioSwitch-2')[0];
-    const audioSwitch3 = $('#audioSwitch-3')[0];
+//Audio Logic
+    const audioSwitch1 = $('#audio-switch-1')[0];
+    const audioSwitch2 = $('#audio-switch-2')[0];
+    const audioSwitch3 = $('#audio-switch-3')[0];
     const audioBell = $('#bell')[0];
     const audioDud = $('#dud')[0];
+    const audioTape = $('#tape')[0];
+
+    const audioSwitchOn = () => {
+        audioSwitch1.pause();
+        audioSwitch2.pause();
+        audioSwitch1.currentTime = 0;
+        audioSwitch2.currentTime = 0;
+        audioSwitch1.play();
+    }
+    const audioSwitchOff = () => {
+        audioSwitch1.pause();
+        audioSwitch2.pause();
+        audioSwitch1.currentTime = 0;
+        audioSwitch2.currentTime = 0;
+        audioSwitch2.play();
+    }
+
+    const audioSuccess = () => {
+        audioBell.pause();
+        audioDud.pause();
+        audioBell.currentTime = 0;
+        audioDud.currentTime = 0;
+        audioBell.play();
+    }
+
+    const audioFail = () => {
+        audioBell.pause();
+        audioDud.pause();
+        audioBell.currentTime = 0;
+        audioDud.currentTime = 0;
+        audioDud.play()
+    }
+
+    
 
 //Sequence1
     const sequenceOne = () => {
@@ -178,20 +212,40 @@ const submitSequence1 = () => {
         submitSequence2();
     }
 
-
-const start = []
 const mainMenu = () => {
-
+    let ready = false
     $('.intro-switch').on('click', function (e) {
-        e.preventDefault;
-        $('.intro-trigger').toggleClass('on-x');
+        e.preventDefault();
+        $('.intro-trigger').toggleClass('intro-on');
+        if (ready === true) {
+            ready = false;
+            audioSwitchOn();
+        } else {
+            ready = true;
+            audioSwitchOff();
+        }
+        console.log(ready);
     })
+    $('.intro-button').on('click', function (e) {
+        console.log(ready);
+        e.preventDefault();
+        if (ready === true) {
+            audioSuccess();
+        } else {
+            audioFail();
+        }
+    })
+}
 
+const mode = () => {
+    let hard = () => {
 
+    }
 }
 //Doc Ready
     $(function(){
         console.log("ready");
-        sequenceOne();
         mainMenu();
+        mode();
+        
     })

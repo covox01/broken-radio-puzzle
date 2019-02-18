@@ -162,11 +162,6 @@ input {
 .access {
   cursor: pointer; }
 
-.on-x {
-  -webkit-transform: translateX(200%);
-  -ms-transform: translateX(200%);
-  transform: translateX(200%); }
-
 .intro-trigger,
 .intro-button-trigger,
 .intro-success,
@@ -203,7 +198,7 @@ h1 {
   font-family: Helvetica, Futura, sans-serif;
   font-size: 1.8rem;
   line-height: none;
-  word-spacing: 10px;
+  word-spacing: 8px;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
@@ -272,13 +267,23 @@ p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-    .intro-switch .intro-switch-length .intro-trigger {
-      position: absolute;
-      background: #6B8983;
-      left: 0;
-      height: 220%;
-      width: 15%;
-      border-radius: 2px; }
+
+.intro-trigger {
+  position: absolute;
+  background: #6B8983;
+  left: 0;
+  height: 190%;
+  width: 15%;
+  border-radius: 2px;
+  -webkit-transition: all .35s ease;
+  -o-transition: all .35s ease;
+  transition: all .35s ease; }
+
+.intro-on {
+  -webkit-transform: translateX(570%);
+  -ms-transform: translateX(570%);
+  transform: translateX(570%);
+  background: #E78B2E; }
 
 .intro-button {
   -ms-grid-row: 10;
@@ -397,15 +402,11 @@ p {
 
 .container-grid {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100%;
   margin: 0 auto;
   display: -ms-grid;
   display: grid;
   height: 450px;
-  width: 750px;
   -ms-grid-columns: 10px 25px (auto)[37] 25px 10px;
   grid-template-columns: 10px 25px repeat(37, auto) 25px 10px;
   -ms-grid-rows: 10px 25px (auto)[27] 25px 10px;

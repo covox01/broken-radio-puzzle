@@ -9,7 +9,7 @@ h1 {
     font-family: Helvetica, Futura, sans-serif;
     font-size: 1.8rem;
     line-height: none;
-    word-spacing: 10px;
+    word-spacing: 8px;
     align-self: center;
     color: $dark-accent;
     z-index: 100;
@@ -53,15 +53,21 @@ p {
         background: $dark-accent;
         position: relative;
         display: flex;
-        .intro-trigger {
-            position: absolute;
-            background: $low-midtone;
-            left: 0;
-            height: 220%;
-            width: 15%;
-            border-radius: 2px;
-        }
     }
+}
+.intro-trigger {
+    position: absolute;
+    background: $low-midtone;
+    left: 0;
+    height: 190%;
+    width: 15%;
+    border-radius: 2px;
+    transition: all .35s ease;
+}
+
+.intro-on {
+    transform: translateX(570%);
+    background: $accent;
 }
 // Introduction Begin Button
 .intro-button {
@@ -135,6 +141,7 @@ p {
         height: 50%;
         border-radius: 3px;
     }
+
 
 
 
