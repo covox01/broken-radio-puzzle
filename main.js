@@ -104,11 +104,7 @@ const mainSwitch = () => {
                 $('.s1-trigger-2').css('background', '#E78B2E');
                 audioSwitchOff();
             }
-            switchStatus2(switchProp);
         })
-    }
-    const switchStatus2 = (status) => {
-        console.log(sequenceCheck1);
     }
 
 // Sequence 2
@@ -140,8 +136,6 @@ const s2Switch1 = () => {
             sequenceCheck2.splice(0, 1, switchProp);
             audioSwitchOff();
         }
-        console.log(switchProp);
-        console.log(sequenceCheck2);
     })
 }
 // Get Status of Sequence 2 Switch 2
@@ -173,8 +167,6 @@ const s2Switch2 = () => {
             sequenceCheck2.splice(1, 1, switchProp);
             audioSwitchOn();
         } 
-        console.log(switchProp);
-        console.log(sequenceCheck2);
     })
 }
 // Get Status of Sequence 2 Switch 3
@@ -241,7 +233,6 @@ const s2Switch4 = () => {
             sequenceCheck2.splice(3, 1, switchProp);
             audioSwitchOff();
         }
-        console.log(switchProp);
     })
 }
 // Get Status of Sequence 2 Switch 5
@@ -279,7 +270,6 @@ const s2Switch5 = () => {
             sequenceCheck2.splice(4, 1, switchProp);
             audioSwitchOff();
         }
-        console.log(sequenceCheck2);
     })
 }
 //Submit Sequences
@@ -291,7 +281,6 @@ const s2Switch5 = () => {
         };
         $('.s1-submit').click(function () {
             if (sequenceCheck1[0].complete === true && sequenceCheck1[1].complete === true && sequenceCheck1[2].complete === true) {
-                console.log("We Good");
                 status.complete = true;
                 failCheck1.pop(status);
                 failCheck1.push(status);
@@ -299,17 +288,13 @@ const s2Switch5 = () => {
                 finalSequenceCheck();
                 $('.s1-success').fadeIn(300);
                 audioSuccess();
-                console.log(failCheck1);
             } else {
                 status.complete = false;
-                console.log("We not good");
                 $('.s1-success').hide();
                 $('.s1-fail').fadeIn(300);
                 failCheck1.pop(status);
                 failCheck1.push(status);
                 finalCheck.splice(0, 1, status);
-                console.log(failCheck1);
-                console.log(finalCheck);
                 audioFail();
                 if (failCheck1[0] === status) {
                     setTimeout(function () {
@@ -317,7 +302,6 @@ const s2Switch5 = () => {
                     }, 800);
                 }
             }
-            console.log(finalCheck);
         })
     }
     //Submit Sequence 2
@@ -328,7 +312,6 @@ const s2Switch5 = () => {
         };
         $('.s2-submit').click(function() {
             if (sequenceCheck2[0].complete === true && sequenceCheck2[1].complete === true && sequenceCheck2[2].complete === true && sequenceCheck2[3].complete === true && sequenceCheck2[4].complete === true) {
-                console.log("We Good");
                 status.complete = true;
                 failCheck2.pop(status);
                 failCheck2.push(status)
@@ -336,11 +319,8 @@ const s2Switch5 = () => {
                 finalSequenceCheck();
                 $('.s2-success').fadeIn(300);
                 audioSuccess();
-                console.log(failCheck1);
-                console.log(finalCheck);
             } else {
                 status.complete = false;
-                console.log("We not good");
                 $('.s2-success').hide();
                 $('.s2-fail').fadeIn(300);
                 failCheck2.pop(status);
@@ -377,6 +357,7 @@ const finalSequenceCheck = () => {
         $('.s1-submit, .s1-fail, .btn1').css('cursor', 'pointer');
         $('.s1-submit, .s1-fail, .btn1').on('click', function(e){
             audioSwitchOff();
+            // audioSwitch3.play();
             audioPlaySong1.pause();
         })   
         audioTape.play();
@@ -414,7 +395,7 @@ const finalSequenceCheck = () => {
                 $('.text, .intro, .mode').hide();
                 $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'pointer');
                 $('.main-switch .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('role', 'button');
-                $('.main-switch, .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('tabindex', '0');
+                $('.main-switch, .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('tabindex', '0');
             } else {
                 audioFail();
                 $('.intro-fail').fadeIn(50);

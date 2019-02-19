@@ -74,3 +74,25 @@
     .needle-on {
         transform: translateX(1300%);
     }
+
+@media (max-width: 750px) {
+    .mode-trigger-on {
+        background: $accent;
+        transform: translateX(100%);
+    }
+
+    .main-trigger-on {
+        transform: translateX(570%);
+    }
+
+     .s2-trigger-1-pos-1,
+     .s2-trigger-2-pos-1,
+     .s2-trigger-3-pos-1 {
+        transform: translateY(-300%);
+    }
+    .s2-trigger-1-pos-2,
+    .s2-trigger-2-pos-2,
+    .s2-trigger-3-pos-2 {
+        transform: translateY(-570%);
+    }
+}

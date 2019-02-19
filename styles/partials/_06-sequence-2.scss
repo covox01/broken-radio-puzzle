@@ -253,3 +253,273 @@
     display: none;   
     width: 28.5%; filter: blur(1.5px);
 }
+
+//Sequence Mobile 1
+@media (max-width: 750px) {
+     .sequence-2 {
+        grid-row: 35 / 50;
+        grid-column: 3 / 30;
+        display: grid;
+        grid-template-rows: repeat(18, auto);
+        grid-template-columns: repeat(23, auto);
+        width: 100%;
+        background: $secondary;
+        border-radius: 3px;
+    }
+
+    // Sequence 2 Switch 1
+    .s2-switch-1 {
+        grid-row: 1 / 19;
+        grid-column: 2 / 7;
+        display: grid;
+        grid-template-rows: repeat(18, auto);
+        grid-template-columns: repeat(5, auto);
+        border-radius: 3px 0 0 3px;
+        width: 98%;
+        background: $secondary;
+        cursor: pointer;
+        .hint-1 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 5;
+            background: url(../assets/hint-1.svg);
+            background-position: center;
+            background-size: 100%;
+            margin: 0 auto;
+            height: 100%;
+            width: 30%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .s2-switch-length-1 {
+            grid-row: 4 / 17;
+            grid-column: 2 / 5;
+            width: 35%;
+            margin: 0 auto;
+            border-radius: 2px;
+            background: $dark-accent;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+    }
+
+    .s2-trigger-1 {
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        width: 220%;
+        height: 15%;
+        border-radius: 3px;
+        background: $low-midtone;
+    }
+
+    // Sequence 2 Switch 2
+    .s2-switch-2 {
+        grid-row: 1 / 19;
+        grid-column: 7 / 12;
+        display: grid;
+        grid-template-rows: repeat(18, auto);
+        grid-template-columns: repeat(5, auto);
+        width: 98%;
+        background: $secondary;
+        cursor: pointer;
+        .hint-2 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 5;
+            background: url(../assets/hint-2.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            height: 100%;
+            width: 50%;
+            cursor: pointer;
+        }
+        .s2-switch-length-2 {
+            grid-row: 4 / 17;
+            grid-column: 2 / 5;
+            border-radius: 2px;
+            background: $dark-accent;
+            margin: 0 auto;
+            width: 35%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+    }
+
+    .s2-trigger-2 {
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0;
+        width: 220%;
+        height: 15%;
+        border-radius: 3px;
+        background: $low-midtone;
+    }
+
+    // Sequence 2 Switch 3
+    .s2-switch-3 {
+        grid-row: 1 / 19;
+        grid-column: 12 / 17;
+        display: grid;
+        grid-template-rows: repeat(18, auto);
+        grid-template-columns: repeat(5, auto);
+        background: $secondary;
+        cursor: pointer;
+        .hint-3 {
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+            background: url(../assets/hint-3.svg);
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            height: 100%;
+            width: 35%;
+            cursor: pointer;
+        }
+        .s2-switch-length-3 {
+            grid-row: 4 / 17;
+            grid-column: 2 / 5;
+            border-radius: 2px;
+            width: 35%;
+            margin: 0 auto;
+            background: $dark-accent;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            transition: all .5s ease;
+        }
+    }
+
+    .s2-trigger-3 {
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0;
+        width: 220%;
+        height: 15%;
+        border-radius: 3px;
+        background: $low-midtone;
+    }
+
+    // Sequence 2 Secondary Switches
+    .s2-sub-switch {
+        grid-row: 1 / 19;
+        grid-column: 17 / 25;
+        display: grid;
+        margin: 0 auto;
+        height: 100%;
+        width: 80%;
+        grid-template-rows: repeat(18, auto);
+        grid-template-columns: repeat(8, auto);
+        border-radius: 0 3px 3px 0;
+        background: $secondary;
+    }
+
+    // Sequence 2 Switch 4
+    .s2-switch-4 {
+        grid-row: 1 / 7;
+        grid-column: 1 / 10;
+        display: grid;
+        grid-template-rows: repeat(6, auto);
+        grid-template-columns: repeat(6, auto);
+        background: $secondary;
+        border-radius: 0 3px 0 0;
+        cursor: pointer;
+        .s2-switch-length-4 {
+            grid-row: 5 / 7;
+            grid-column: 2 / 6;
+            height: 50%;
+            width: 100%;
+            margin: 0 auto;
+            background: $dark-accent;
+            display: flex;
+            align-self: center;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+    .s2-trigger-4 {
+        position: absolute;
+        background: $low-midtone;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        cursor: pointer;
+    }
+    // Sequence 2 Switch 5
+    .s2-switch-5 {
+        grid-row: 8 / 11;
+        grid-column: 1 / 10;
+        display: grid;
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(6, auto);
+        background: $secondary;
+        cursor: pointer;
+        .s2-switch-length-5 {
+            grid-row: 1 / 4;
+            grid-column: 2 / 6;
+            background: $dark-accent;
+            height: 45%;
+            width: 100%;
+            margin: 0 auto;
+            align-self: center;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+    .s2-trigger-5 {
+        position: absolute;
+        background: $low-midtone;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        cursor: pointer;
+    }
+    // Sequence 2 Submit
+    .s2-submit {
+        grid-row: 12 / 18;
+        grid-column: 2 / 9;
+        display: grid;
+        grid-template-rows: repeat(8, auto);
+        grid-template-columns: repeat(5, auto);
+        background: $secondary;
+        cursor: pointer;
+        .btn2 {
+            grid-row: 1 / 6;
+            grid-column: 1 / 6;
+            margin: 0 auto;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+    .s2-button {
+        background: url(../assets/submit.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 50%;
+    }
+    .s2-fail {
+        background: url(../assets/submit-fail.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        display: none;
+        width: 30%;
+        filter: blur(5px);
+    }
+    .s2-success {
+        background: url(../assets/submit-success.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        display: none;   
+        width: 28.5%; filter: blur(1.5px);
+    }
+}
