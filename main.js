@@ -6,32 +6,34 @@ const mainSwitch = () => {
         sequence: 0,
         complete: false
     }
-    $('.main-switch').on('click', function (e) {
+    $('.main-switch').on('click keypress', function (e) {
         e.preventDefault();
-        console.log("main trigger works");
+        if (e.keyCode == 13 || e.KeyCode == 32) {
+            
+        }
         $('.main-trigger').toggleClass('main-trigger-on');
-        if (switchProp.sequence === 0) {
+        if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 0) {
             switchProp.sequence = 1;
             switchProp.complete = false;
             sequenceCheck1.splice(0, 1, switchProp);
             audioSwitchOff();
-        } else if (switchProp.sequence === 1) {
+        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 1) {
             switchProp.sequence = 2;
             switchProp.complete = false;
             sequenceCheck1.splice(0, 1, switchProp);
             audioSwitchOff();
-        } else if (switchProp.sequence === 2) {
+        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 2) {
             switchProp.sequence = 3;
             switchProp.complete = true;
             sequenceCheck1.splice(0, 1, switchProp);
             $('.main-trigger').css('background', '#E78B2E'); 
             audioSwitchOn();
-        } else if (switchProp.sequence === 3 && hardMode === false) {
+        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 3 && hardMode === false) {
             switchProp.complete = false;
             switchProp.sequence = 0;
             sequenceCheck1.splice(0, 1, switchProp);
             $('.main-trigger').css('background', '#6B8983'); audioSwitchOff();
-        } else if (switchProp.sequence === 3 && hardMode === true){
+        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 3 && hardMode === true){
             switchProp.complete = false;
             switchProp.sequence = 0;
             sequenceCheck1.splice(0, 1, switchProp);
@@ -326,7 +328,6 @@ const s2Switch5 = () => {
                 failCheck2.pop(status);
                 failCheck2.push(status);
                 finalCheck.splice(1, 1, status)
-                console.log(failCheck1);
                 audioFail();
                 if (failCheck2[0] === status) {
                     setTimeout(function() {
@@ -334,7 +335,6 @@ const s2Switch5 = () => {
                     }, 800);
                 }
             }
-            console.log(finalCheck);
         })
     }
 
@@ -386,7 +386,6 @@ const finalSequenceCheck = () => {
     }
     const mainMenuStart = () => {
         $('.intro-button').on('click', function (e) {
-            console.log(ready);
             e.preventDefault();
             if (ready === true) {
                 audioSuccess();
