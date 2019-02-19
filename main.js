@@ -394,8 +394,8 @@ const finalSequenceCheck = () => {
                 sequenceTwo();
                 $('.text, .intro, .mode').hide();
                 $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'pointer');
-                $('.main-switch .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('role', 'button');
-                $('.main-switch, .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('tabindex', '0');
+                $('.main-switch .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button .intro-switch').attr('role', 'button');
+                $('.main-switch, .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button, .intro-switch').attr('tabindex', '0');
             } else {
                 audioFail();
                 $('.intro-fail').fadeIn(50);
