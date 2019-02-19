@@ -164,23 +164,17 @@ input {
 
 .intro-trigger,
 .intro-button-trigger,
-.mode-trigger,
-.needle,
+.main-trigger,
 .s2-trigger-1,
 .s2-trigger-2,
 .s2-trigger-3,
 .s2-trigger-4,
 .s2-trigger-5,
-.s2-fail,
-.s2-success,
-.btn2,
 .s1-trigger-1,
-.s1-trigger-2,
-.s1-fail,
-.s1-success {
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease; }
+.s1-trigger-2 {
+  -webkit-transition: all .15s ease;
+  -o-transition: all .15s ease;
+  transition: all .15s ease; }
 
 .text {
   -ms-grid-row: 17;
@@ -272,15 +266,9 @@ p {
   height: 190%;
   width: 15%;
   border-radius: 2px;
-  -webkit-transition: all .35s ease;
-  -o-transition: all .35s ease;
-  transition: all .35s ease; }
-
-.intro-on {
-  -webkit-transform: translateX(567%);
-  -ms-transform: translateX(567%);
-  transform: translateX(567%);
-  background: #E78B2E; }
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease; }
 
 .intro-button {
   -ms-grid-row: 10;
@@ -345,9 +333,9 @@ p {
   -ms-grid-row: 12;
   -ms-grid-row-span: 18;
   grid-row: 12 / 30;
-  -ms-grid-column: 28;
-  -ms-grid-column-span: 6;
-  grid-column: 28 / 34;
+  -ms-grid-column: 27;
+  -ms-grid-column-span: 8;
+  grid-column: 27 / 35;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (auto)[18];
@@ -374,7 +362,7 @@ p {
   -ms-grid-columns: (auto)[5];
   grid-template-columns: repeat(5, auto);
   background: #6B8983;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   position: relative;
   border-radius: 3px; }
@@ -386,13 +374,10 @@ p {
   left: 0;
   right: 0;
   height: 50%;
-  border-radius: 3px; }
-
-.mode-trigger-on {
-  background: #E78B2E;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%); }
+  border-radius: 3px;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease; }
 
 .flex {
   display: -webkit-box;
@@ -454,7 +439,10 @@ p {
   -ms-grid-column-span: 37;
   grid-column: 3 / 40;
   background: #445653;
-  border-radius: 3px; }
+  border-radius: 3px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
 
 .channel {
   -ms-grid-row: 4;
@@ -465,7 +453,10 @@ p {
   grid-column: 4 / 24;
   width: 98%;
   background: #6B8983;
-  border-radius: 3px; }
+  border-radius: 3px;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
 
 .channel-length {
   -ms-grid-row: 6;
@@ -481,15 +472,22 @@ p {
   align-self: center;
   border-radius: 2px;
   background: #FAF7E0;
-  position: relative; }
-  .channel-length .needle {
-    position: absolute;
-    border-radius: 1px;
-    background: #F42121;
-    width: 9px;
-    height: 26px;
-    bottom: -7px;
-    left: 20%; }
+  position: relative;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+
+.needle {
+  position: absolute;
+  border-radius: 1px;
+  background: #F42121;
+  width: 9px;
+  height: 26px;
+  bottom: -7px;
+  left: 20%;
+  -webkit-transition: all 2.7s ease;
+  -o-transition: all 2.7s ease;
+  transition: all 2.7s ease; }
 
 .speaker {
   -ms-grid-row: 4;
@@ -592,7 +590,11 @@ p {
   width: 220%;
   height: 20px;
   background: #6B8983;
-  cursor: pointer; }
+  border-radius: 1px;
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
 
 .s1-sub-switch {
   -ms-grid-row: 12;
@@ -649,7 +651,10 @@ p {
   bottom: 0;
   left: 0;
   width: 50%;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease; }
 
 .s1-switch-2 {
   -ms-grid-row: 7;
@@ -729,7 +734,9 @@ p {
   background-position: center;
   background-size: 100%;
   display: none;
-  width: 35%; }
+  width: 35%;
+  -webkit-filter: blur(5px);
+  filter: blur(5px); }
 
 .s1-success {
   background: url(../assets/submit-success.svg);
@@ -737,7 +744,9 @@ p {
   background-position: center;
   background-size: 100%;
   display: none;
-  width: 35%; }
+  width: 35%;
+  -webkit-filter: blur(1.5px);
+  filter: blur(1.5px); }
 
 .sequence-2 {
   -ms-grid-row: 12;
@@ -794,7 +803,7 @@ p {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3 / 4;
-    border-radius: 3px;
+    border-radius: 2px;
     background: #445653;
     cursor: pointer;
     display: -webkit-box;
@@ -811,6 +820,7 @@ p {
   margin: 0 auto;
   width: 220%;
   height: 20px;
+  border-radius: 1px;
   background: #6B8983; }
 
 .s2-switch-2 {
@@ -849,7 +859,7 @@ p {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3 / 4;
-    border-radius: 3px;
+    border-radius: 2px;
     background: #445653;
     cursor: pointer;
     display: -webkit-box;
@@ -866,6 +876,7 @@ p {
   bottom: 0;
   width: 220%;
   height: 20px;
+  border-radius: 1px;
   background: #6B8983; }
 
 .s2-switch-3 {
@@ -905,7 +916,7 @@ p {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3 / 4;
-    border-radius: 3px;
+    border-radius: 2px;
     background: #445653;
     cursor: pointer;
     position: relative;
@@ -925,6 +936,7 @@ p {
   bottom: 0;
   width: 220%;
   height: 20px;
+  border-radius: 1px;
   background: #6B8983; }
 
 .s2-sub-switch {
@@ -1051,25 +1063,115 @@ p {
     margin: 0 auto;
     height: 100%;
     cursor: pointer; }
-  .s2-submit .s2-button {
-    background: url(../assets/submit.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    width: 50%; }
-  .s2-submit .s2-fail {
-    background: url(../assets/submit-fail.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    display: none;
-    width: 35%; }
-  .s2-submit .s2-success {
-    background: url(../assets/submit-success.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    display: none;
-    width: 35%; }
+
+.s2-button {
+  background: url(../assets/submit.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 50%; }
+
+.s2-fail {
+  background: url(../assets/submit-fail.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: none;
+  width: 30%;
+  -webkit-filter: blur(5px);
+  filter: blur(5px); }
+
+.s2-success {
+  background: url(../assets/submit-success.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  display: none;
+  width: 28.5%;
+  -webkit-filter: blur(1.5px);
+  filter: blur(1.5px); }
+
+.intro-on {
+  -webkit-transform: translateX(568%);
+  -ms-transform: translateX(568%);
+  transform: translateX(568%);
+  background: #E78B2E; }
+
+.mode-trigger-on {
+  background: #E78B2E;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%); }
 
 .hard-mode {
   background: #E78B2E; }
+
+.main-trigger-on {
+  -webkit-transform: translateY(-970%);
+  -ms-transform: translateY(-970%);
+  transform: translateY(-970%); }
+
+.s1-trigger-on {
+  -webkit-transform: translateX(102%);
+  -ms-transform: translateX(102%);
+  transform: translateX(102%); }
+
+.s2-trigger-1-pos-1 {
+  -webkit-transform: translateY(-440%);
+  -ms-transform: translateY(-440%);
+  transform: translateY(-440%); }
+
+.s2-trigger-1-pos-2 {
+  -webkit-transform: translateY(-840%);
+  -ms-transform: translateY(-840%);
+  transform: translateY(-840%);
+  background: #E78B2E; }
+
+.s2-trigger-2-pos-1 {
+  -webkit-transform: translateY(-440%);
+  -ms-transform: translateY(-440%);
+  transform: translateY(-440%); }
+
+.s2-trigger-2-pos-2 {
+  -webkit-transform: translateY(-840%);
+  -ms-transform: translateY(-840%);
+  transform: translateY(-840%); }
+
+.s2-trigger-2-pos-3 {
+  background: #E78B2E; }
+
+.s2-trigger-3-pos-1 {
+  -webkit-transform: translateY(-440%);
+  -ms-transform: translateY(-440%);
+  transform: translateY(-440%);
+  background: #E78B2E; }
+
+.s2-trigger-3-pos-2 {
+  -webkit-transform: translateY(-840%);
+  -ms-transform: translateY(-840%);
+  transform: translateY(-840%); }
+
+.s2-trigger-4-pos-1 {
+  -webkit-transform: translateX(105%);
+  -ms-transform: translateX(105%);
+  transform: translateX(105%); }
+
+.s2-trigger-4-pos-2 {
+  background: #E78B2E; }
+
+.s2-trigger-4-init {
+  -webkit-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%); }
+
+.s2-trigger-5-pos-1 {
+  -webkit-transform: translateX(105%);
+  -ms-transform: translateX(105%);
+  transform: translateX(105%); }
+
+.s2-trigger-5-pos-2 {
+  background: #E78B2E; }
+
+.needle-on {
+  -webkit-transform: translateX(1300%);
+  -ms-transform: translateX(1300%);
+  transform: translateX(1300%); }

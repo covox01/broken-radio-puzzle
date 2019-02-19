@@ -61,13 +61,9 @@ p {
     height: 190%;
     width: 15%;
     border-radius: 2px;
-    transition: all .35s ease;
+    transition: all .1s ease;
 }
 
-.intro-on {
-    transform: translateX(567%);
-    background: $accent;
-}
 // Introduction Begin Button
 .intro-button {
     grid-row: 10 / 17;
@@ -112,7 +108,7 @@ p {
 //Difficulty Mode Select
 .mode {
     grid-row: 12 / 30;
-    grid-column: 28 / 34;
+    grid-column: 27 / 35;
     display: grid;
     grid-template-rows: repeat(18, auto);
     grid-template-columns: repeat(7, auto);
@@ -129,7 +125,7 @@ p {
     grid-template-rows: repeat(12, auto);
     grid-template-columns: repeat(5, auto);
     background: $low-midtone;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
     position: relative;
     border-radius: 3px;
@@ -143,12 +139,9 @@ p {
     right: 0;
     height: 50%;
     border-radius: 3px;
+    transition: all .1s ease;
 }
 
-.mode-trigger-on {
-    background: $accent;
-    transform: translateY(100%);
-}
 
 
 

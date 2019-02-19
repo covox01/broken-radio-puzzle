@@ -1,3 +1,76 @@
+
+.intro-on {
+    transform: translateX(568%);
+    background: $accent;
+}
+.mode-trigger-on {
+    background: $accent;
+    transform: translateY(100%);
+}
 .hard-mode {
     background: $accent;
 }
+.main-trigger-on {
+    transform: translateY(-970%);
+}
+
+.s1-trigger-on {
+    transform: translateX(102%);
+}
+
+// Sequence 2
+// Trigger 1
+    .s2-trigger-1-pos-1 {
+        transform: translateY(-440%);
+    }
+    .s2-trigger-1-pos-2 {
+        transform: translateY(-840%);
+        background: $accent;
+    }
+    // Trigger 2
+    .s2-trigger-2-pos-1 {
+        transform: translateY(-440%);
+    }
+    .s2-trigger-2-pos-2 {
+        transform: translateY(-840%);
+    }
+
+    .s2-trigger-2-pos-3 {
+        background: $accent;
+    }
+
+    // Trigger 3
+    .s2-trigger-3-pos-1 {
+        transform: translateY(-440%);
+        background: $accent;
+    }
+
+    .s2-trigger-3-pos-2 {
+        transform: translateY(-840%);
+    }
+
+    // Trigger 4
+    .s2-trigger-4-pos-1 {
+        transform: translateX(105%);
+    }
+
+    .s2-trigger-4-pos-2 {
+        background: $accent;
+    }
+
+    .s2-trigger-4-init {
+        transform: translateX(0%);
+    }
+
+     // Trigger 5
+    .s2-trigger-5-pos-1 {
+        transform: translateX(105%);
+    }
+    .s2-trigger-5-pos-2 {
+        background: $accent;
+    }
+
+    //Radio Needle
+    .needle-on {
+        transform: translateX(1300%);
+    }

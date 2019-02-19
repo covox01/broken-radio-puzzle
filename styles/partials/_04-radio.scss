@@ -37,6 +37,7 @@
     grid-column: 3 / 40;
     background: $dark-accent;
     border-radius: 3px;
+    transition: all .3s ease;
 }
 .channel {
     grid-row: 4 / 9;
@@ -44,6 +45,7 @@
     width: 98%;
     background: $low-midtone;
     border-radius: 3px;
+    transition: all 1s ease;
 }
 .channel-length {
     grid-row: 6 / 7;
@@ -54,15 +56,17 @@
     border-radius: 2px;
     background: $secondary;
     position: relative;
-    .needle {
-        position: absolute;
-        border-radius: 1px;
-        background: $channel-accent;
-        width: 9px;
-        height: 26px;
-        bottom: -7px;
-        left: 20%;
-    }
+    transition: all 1s ease;
+}
+.needle {
+    position: absolute;
+    border-radius: 1px;
+    background: $channel-accent;
+    width: 9px;
+    height: 26px;
+    bottom: -7px;
+    left: 20%;
+    transition: all 2.7s ease;
 }
 .speaker {
     grid-row: 4 / 9;

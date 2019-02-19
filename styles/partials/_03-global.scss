@@ -35,21 +35,15 @@ input {
 
 .intro-trigger,
 .intro-button-trigger,
-.mode-trigger,
-.needle,
+.main-trigger,
 .s2-trigger-1,
 .s2-trigger-2,
 .s2-trigger-3,
 .s2-trigger-4,
 .s2-trigger-5,
-.s2-fail,
-.s2-success,
-.btn2,
 .s1-trigger-1,
-.s1-trigger-2,
-.s1-fail,
-.s1-success {
-    transition: all .2s ease;
+.s1-trigger-2 {
+    transition: all .15s ease;
 }
 
 

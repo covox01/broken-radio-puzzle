@@ -35,7 +35,7 @@
     .s2-switch-length-1 {
         grid-row: 4 / 17;
         grid-column: 3 / 4;
-        border-radius: 3px;
+        border-radius: 2px;
         background: $dark-accent;
         cursor: pointer;
         display: flex;
@@ -50,6 +50,7 @@
     margin: 0 auto;
     width: 220%;
     height: 20px;
+    border-radius: 1px;
     background: $low-midtone;
 }
 
@@ -76,7 +77,7 @@
     .s2-switch-length-2 {
         grid-row: 4 / 17;
         grid-column: 3 / 4;
-        border-radius: 3px;
+        border-radius: 2px;
         background: $dark-accent;
         cursor: pointer;
         display: flex;
@@ -91,6 +92,7 @@
     bottom: 0;
     width: 220%;
     height: 20px;
+    border-radius: 1px;
     background: $low-midtone;
 }
 
@@ -118,7 +120,7 @@
     .s2-switch-length-3 {
         grid-row: 4 / 17;
         grid-column: 3 / 4;
-        border-radius: 3px;
+        border-radius: 2px;
         background: $dark-accent;
         cursor: pointer;
         position: relative;
@@ -134,6 +136,7 @@
     bottom: 0;
     width: 220%;
     height: 20px;
+    border-radius: 1px;
     background: $low-midtone;
 }
 
@@ -226,26 +229,27 @@
         height: 100%;
         cursor: pointer;
     }
-    .s2-button {
-        background: url(../assets/submit.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        width: 50%;
-    }
-    .s2-fail {
-        background: url(../assets/submit-fail.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        display: none;
-        width: 35%;
-    }
-    .s2-success {
-        background: url(../assets/submit-success.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-        display: none;   
-        width: 35%; 
-    }
+}
+.s2-button {
+    background: url(../assets/submit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 50%;
+}
+.s2-fail {
+    background: url(../assets/submit-fail.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    width: 30%;
+    filter: blur(5px);
+}
+.s2-success {
+    background: url(../assets/submit-success.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    display: none;   
+    width: 28.5%; filter: blur(1.5px);
 }

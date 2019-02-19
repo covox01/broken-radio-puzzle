@@ -1,4 +1,4 @@
-
+//Sequence 1
 //Gets Status of Main Switch
 const mainSwitch = () => {
     let switchProp = {
@@ -8,153 +8,455 @@ const mainSwitch = () => {
     }
     $('.main-switch').on('click', function (e) {
         e.preventDefault();
-        $('#trigger-0').toggleClass('on');
-        // Inserts Key(Name) and Value(Name of Switch)
+        console.log("main trigger works");
+        $('.main-trigger').toggleClass('main-trigger-on');
         if (switchProp.sequence === 0) {
             switchProp.sequence = 1;
             switchProp.complete = false;
             sequenceCheck1.splice(0, 1, switchProp);
-                audioSwitch1.pause();
-                audioSwitch1.currentTime = 0;
-                audioSwitch1.play();
+            audioSwitchOff();
         } else if (switchProp.sequence === 1) {
             switchProp.sequence = 2;
             switchProp.complete = false;
             sequenceCheck1.splice(0, 1, switchProp);
-                audioSwitch1.pause();
-                audioSwitch1.currentTime = 0;
-                audioSwitch1.play();
+            audioSwitchOff();
         } else if (switchProp.sequence === 2) {
             switchProp.sequence = 3;
             switchProp.complete = true;
             sequenceCheck1.splice(0, 1, switchProp);
-            $('#trigger-0').css('background', '#E78B2E');    
-                audioSwitch1.pause();
-                audioSwitch1.CurrentTime = 0;
-                audioSwitch2.play();
-        } else if (switchProp.sequence === 3) {
+            $('.main-trigger').css('background', '#E78B2E'); 
+            audioSwitchOn();
+        } else if (switchProp.sequence === 3 && hardMode === false) {
             switchProp.complete = false;
             switchProp.sequence = 0;
             sequenceCheck1.splice(0, 1, switchProp);
-            $('#trigger-0').css('background', '#6B8983');  
-                audioSwitch2.pause();
-                audioSwitch2.currentTime = 0;
-                audioSwitch1.play();
-        }
-        mainSwitchStatus(switchProp);
-    })
-}
-const mainSwitchStatus = (status) => {
-    console.log(sequenceCheck1);
-}
-//Gets Status of Switch One
-const switch1 = () => {
-    let switchProp = {
-        name: 'Switch 1',
-        sequence: 0,
-        complete: false
-    }   
-    $('.switch-1').on('click', function (e) {
-        e.preventDefault();
-        $('#trigger-1').toggleClass('on');
-        if (switchProp.sequence === 0 || switchProp.sequence === 2) {
-            switchProp.sequence = 0;
-            switchProp.sequence = 1;
+            $('.main-trigger').css('background', '#6B8983'); audioSwitchOff();
+        } else if (switchProp.sequence === 3 && hardMode === true){
             switchProp.complete = false;
-            sequenceCheck1.splice(1, 1, switchProp);
-            $('#trigger-1').css('background', '#6B8983');
-                audioSwitch2.pause();
-                audioSwitch2.currentTime = 0;
-                audioSwitch1.play();
-        } else if (switchProp.sequence === 1) {
-            switchProp.sequence = 2;
-            switchProp.complete = true;
-            sequenceCheck1.splice(1, 1, switchProp);
-            $('#trigger-1').css('background', '#E78B2E');  
-                audioSwitch1.pause();
-                audioSwitch1.currentTime = 0;
-                audioSwitch2.play();
+            switchProp.sequence = 0;
+            sequenceCheck1.splice(0, 1, switchProp);
+            audioSwitchOff();
+            $('.main-trigger').css('background', '#E78B2E'); 
         }
-        switchStatus1(switchProp);
     })
 }
-const switchStatus1 = (status) => {
-    console.log(sequenceCheck1);
-}
+//Gets Status of Sequence 1 Switch 1
+    const switch1 = () => {
+        let switchProp = {
+            name: 'Switch 1',
+            sequence: 0,
+            complete: false
+        }   
+        $('.s1-switch-1').on('click', function (e) {
+            e.preventDefault();
+            $('.s1-trigger-1').toggleClass('s1-trigger-on');
+            if ((switchProp.sequence === 0 || switchProp.sequence === 2) && hardMode === false) {
+                switchProp.sequence = 0;
+                switchProp.sequence = 1;
+                switchProp.complete = false;
+                sequenceCheck1.splice(1, 1, switchProp);
+                $('.s1-trigger-1').css('background', '#6B8983');
+                audioSwitchOff();
+            }   else if ((switchProp.sequence === 0 || switchProp.sequence === 2) && hardMode === true) {
+                switchProp.sequence = 0;
+                switchProp.sequence = 1;
+                switchProp.complete = false;
+                sequenceCheck1.splice(1, 1, switchProp);
+                $('.s1-trigger-1').css('background', '#E78B2E');
+                audioSwitchOff();
+            }  else if (switchProp.sequence === 1) {
+                switchProp.sequence = 2;
+                switchProp.complete = true;
+                sequenceCheck1.splice(1, 1, switchProp);
+                $('.s1-trigger-1').css('background', '#E78B2E');
+                audioSwitchOn();
+            }
+        })
+    }
 
-//Get Status of Switch 2
-const switch2 = () => {
-    let switchProp = {
-        name: 'Switch 2',
+//Get Status of Sequence 1 Switch 2
+    const switch2 = () => {
+        let switchProp = {
+            name: 'Switch 2',
+            sequence: 0,
+            complete: false
+        }
+        $('.s1-switch-2').on('click', function (e) {
+            e.preventDefault();
+            $('.s1-trigger-2').toggleClass('s1-trigger-on');
+            if (switchProp.sequence === 0 || switchProp.sequence === 2) {
+                switchProp.sequence = 0;
+                switchProp.sequence = 1;
+                switchProp.complete = true;
+                sequenceCheck1.splice(2, 1, switchProp);
+                $('.s1-trigger-2').css('background', '#E78B2E');  
+                audioSwitchOn();
+            } else if (switchProp.sequence === 1 && hardMode === false) {
+                switchProp.sequence = 0;
+                switchProp.complete = false;
+                sequenceCheck1.splice(2, 1, switchProp);
+                $('.s1-trigger-2').css('background', '#6B8983');
+                 audioSwitchOff();
+            } else if (switchProp.sequence === 1 && hardMode === true) {
+                switchProp.sequence = 0;
+                switchProp.complete = false;
+                sequenceCheck1.splice(2, 1, switchProp);
+                $('.s1-trigger-2').css('background', '#E78B2E');
+                audioSwitchOff();
+            }
+            switchStatus2(switchProp);
+        })
+    }
+    const switchStatus2 = (status) => {
+        console.log(sequenceCheck1);
+    }
+
+// Sequence 2
+// Get Status of Sequence 2 Switch 1
+const s2Switch1 = () => {
+    let switchProp ={
+        name: 'S2 Switch 1',
         sequence: 0,
         complete: false
     }
-    $('.switch-2').on('click', function (e) {
+    $('.s2-switch-1').on('click', function(e){
         e.preventDefault();
-        $('#trigger-2').toggleClass('on');
-        if (switchProp.sequence === 0 || switchProp.sequence === 2) {
-            switchProp.sequence = 0;
+        if (switchProp.sequence === 0) {
+            $('.s2-trigger-1').addClass('s2-trigger-1-pos-1');
             switchProp.sequence = 1;
-            switchProp.complete = true;
-            sequenceCheck1.splice(2, 1, switchProp);
-            $('#trigger-2').css('background', '#E78B2E');  
-                audioSwitch1.pause();
-                audioSwitch1.currentTime = 0;
-                audioSwitch2.play();
+            sequenceCheck2.splice(0, 1, switchProp)
+            audioSwitchOff();
         } else if (switchProp.sequence === 1) {
+            $('.s2-trigger-1').removeClass('s2-trigger-1-pos-1');
+            $('.s2-trigger-1').addClass('s2-trigger-1-pos-2');
+            switchProp.sequence = 2;
+            switchProp.complete = true;
+            sequenceCheck2.splice(0, 1, switchProp);
+            audioSwitchOn();
+        } else {
+            $('.s2-trigger-1').removeClass('s2-trigger-1-pos-1 s2-trigger-1-pos-2');
             switchProp.sequence = 0;
             switchProp.complete = false;
-            sequenceCheck1.splice(2, 1, switchProp);
-            $('#trigger-2').css('background', '#6B8983');
-                audioSwitch2.pause();
-                audioSwitch2.currentTime = 0;
-                audioSwitch1.play();
+            sequenceCheck2.splice(0, 1, switchProp);
+            audioSwitchOff();
         }
-        switchStatus2(switchProp);
+        console.log(switchProp);
+        console.log(sequenceCheck2);
     })
 }
-const switchStatus2 = (status) => {
-    console.log(sequenceCheck1);
+// Get Status of Sequence 2 Switch 2
+const s2Switch2 = () => {
+    let switchProp = {
+        name: 'S2 Switch 2',
+        sequence: 0,
+        complete: false
+    }
+    $('.s2-switch-2').on('click', function (e) {
+        e.preventDefault();
+        if (switchProp.sequence === 0 || switchProp.sequence === 3) {
+            $('.s2-trigger-2').removeClass('s2-trigger-2-pos-3');
+            $('.s2-trigger-2').addClass('s2-trigger-2-pos-1');
+            switchProp.sequence = 1;
+            sequenceCheck2.splice(1, 1, switchProp)
+            audioSwitchOff();
+        } else if (switchProp.sequence === 1) {
+            $('.s2-trigger-2').removeClass('s2-trigger-2-pos-1');
+            $('.s2-trigger-2').addClass('s2-trigger-2-pos-2');
+            switchProp.sequence = 2;
+            sequenceCheck2.splice(1, 1, switchProp);
+            audioSwitchOff();
+        } else {
+            $('.s2-trigger-2').removeClass('s2-trigger-2-pos-2');
+            $('.s2-trigger-2').addClass('s2-trigger-2-pos-3');
+            switchProp.sequence = 3;
+            switchProp.complete = true;
+            sequenceCheck2.splice(1, 1, switchProp);
+            audioSwitchOn();
+        } 
+        console.log(switchProp);
+        console.log(sequenceCheck2);
+    })
+}
+// Get Status of Sequence 2 Switch 3
+const s2Switch3 = () => {
+    let switchProp = {
+        name: 'S2 Switch 3',
+        sequence: 0,
+        complete: false
+    }
+    $('.s2-switch-3').on('click', function (e) {
+        e.preventDefault();
+        if (switchProp.sequence === 0) {
+            $('.s2-trigger-3').removeClass('s2-trigger-3-pos-2');
+            $('.s2-trigger-3').addClass('s2-trigger-3-pos-1');
+            switchProp.sequence = 1;
+            switchProp.complete = true;
+            sequenceCheck2.splice(2, 1, switchProp)
+            audioSwitchOn();
+        } else if (switchProp.sequence === 1){
+            $('.s2-trigger-3').removeClass('s2-trigger-3-pos-1');
+            $('.s2-trigger-3').addClass('s2-trigger-3-pos-2');
+            switchProp.sequence = 2;
+            switchProp.complete = false;
+            sequenceCheck2.splice(2, 1, switchProp);
+            audioSwitchOff();
+        } else {
+            $('.s2-trigger-3').removeClass('s2-trigger-3-pos-2');
+            switchProp.sequence = 0;
+            sequenceCheck2.splice(2, 1, switchProp);
+            audioSwitchOff();
+        }
+    })
+}
+// Get Status of Sequence 2 Switch 4
+const s2Switch4 = () => {
+    let switchProp = {
+        name: 'S2 Switch 4',
+        sequence: 0,
+        complete: false
+    }
+    $('.s2-switch-4').on('click', function (e) {
+        e.preventDefault();
+        if (switchProp.sequence === 0) {
+            $('.s2-trigger-4').removeClass('s2-trigger-4-pos-2');
+            $('.s2-trigger-4').addClass('s2-trigger-4-pos-1');
+            switchProp.sequence = 1;
+            sequenceCheck2.splice(3, 1, switchProp);
+            audioSwitchOff();
+        } else if (switchProp.sequence === 1) {
+            $('.s2-trigger-4').removeClass('s2-trigger-4-pos-1');
+            switchProp.sequence = 2
+            sequenceCheck2.splice(3, 1, switchProp);
+            audioSwitchOff();
+        } else if (switchProp.sequence === 2) {
+            $('.s2-trigger-4').addClass('s2-trigger-4-pos-1 s2-trigger-4-pos-2');
+            switchProp.sequence = 3
+            switchProp.complete = true;
+            sequenceCheck2.splice(3, 1, switchProp);
+            audioSwitchOn();
+        } else if (switchProp.complete === true) {
+            $('.s2-trigger-4').removeClass('s2-trigger-4-pos-1 s2-trigger-4-pos-2');
+            switchProp.sequence = 0;
+            switchProp.complete = false;
+            sequenceCheck2.splice(3, 1, switchProp);
+            audioSwitchOff();
+        }
+        console.log(switchProp);
+    })
+}
+// Get Status of Sequence 2 Switch 5
+const s2Switch5 = () => {
+    let switchProp = {
+        name: 'S2 Switch 5',
+        sequence: 0,
+        complete: false
+    }
+    $('.s2-switch-5').on('click', function (e) {
+        e.preventDefault();
+        if (switchProp.sequence === 0) {
+            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-2');
+            $('.s2-trigger-5').addClass('s2-trigger-5-pos-1');
+            switchProp.sequence = 1;
+            sequenceCheck2.splice(4, 1, switchProp)
+            audioSwitchOff();
+        } else if (switchProp.sequence === 1) {
+            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-1');
+            $('.s2-trigger-5').addClass('s2-trigger-5-pos-2');
+            switchProp.sequence = 2;
+            switchProp.complete = true;
+            sequenceCheck2.splice(4, 1, switchProp);
+            audioSwitchOn();
+        } else if (switchProp.sequence === 2) {
+            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-2');
+            $('.s2-trigger-5').addClass('s2-trigger-5-pos-1');
+            switchProp.sequence = 3;
+            switchProp.complete = false;
+            sequenceCheck2.splice(4, 1, switchProp);
+            audioSwitchOff();
+        } else {
+            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-1');
+            switchProp.sequence = 0;
+            sequenceCheck2.splice(4, 1, switchProp);
+            audioSwitchOff();
+        }
+        console.log(sequenceCheck2);
+    })
+}
+//Submit Sequences
+    //Submit Sequence 1
+    const submitSequence1 = () => {
+        let status = {
+            name: "Sequence 1",
+            complete: false
+        };
+        $('.s1-submit').click(function () {
+            if (sequenceCheck1[0].complete === true && sequenceCheck1[1].complete === true && sequenceCheck1[2].complete === true) {
+                console.log("We Good");
+                status.complete = true;
+                failCheck1.pop(status);
+                failCheck1.push(status);
+                finalCheck.splice(0, 1, status);
+                finalSequenceCheck();
+                $('.s1-success').fadeIn(300);
+                audioSuccess();
+                console.log(failCheck1);
+            } else {
+                status.complete = false;
+                console.log("We not good");
+                $('.s1-success').hide();
+                $('.s1-fail').fadeIn(300);
+                failCheck1.pop(status);
+                failCheck1.push(status);
+                finalCheck.splice(0, 1, status);
+                console.log(failCheck1);
+                console.log(finalCheck);
+                audioFail();
+                if (failCheck1[0] === status) {
+                    setTimeout(function () {
+                        $('.s1-fail').fadeOut(800);
+                    }, 800);
+                }
+            }
+            console.log(finalCheck);
+        })
+    }
+    //Submit Sequence 2
+    const submitSequence2 = () => {
+        let status = {
+            name: "Sequence 2",
+            complete: false
+        };
+        $('.s2-submit').click(function() {
+            if (sequenceCheck2[0].complete === true && sequenceCheck2[1].complete === true && sequenceCheck2[2].complete === true && sequenceCheck2[3].complete === true && sequenceCheck2[4].complete === true) {
+                console.log("We Good");
+                status.complete = true;
+                failCheck2.pop(status);
+                failCheck2.push(status)
+                finalCheck.splice(1, 1, status);
+                finalSequenceCheck();
+                $('.s2-success').fadeIn(300);
+                audioSuccess();
+                console.log(failCheck1);
+                console.log(finalCheck);
+            } else {
+                status.complete = false;
+                console.log("We not good");
+                $('.s2-success').hide();
+                $('.s2-fail').fadeIn(300);
+                failCheck2.pop(status);
+                failCheck2.push(status);
+                finalCheck.splice(1, 1, status)
+                console.log(failCheck1);
+                audioFail();
+                if (failCheck2[0] === status) {
+                    setTimeout(function() {
+                        $('.s2-fail').fadeOut(800);
+                    }, 800);
+                }
+            }
+            console.log(finalCheck);
+        })
+    }
+
+//Final Sequence Check
+
+const finalSequenceCheck = () => {
+    if (finalCheck[0].complete === true && finalCheck[1].complete === true) {
+        $('.radiohead').css('background', '#E78B2E');
+        $('.channel').css('background', '#B2F7E9');
+        $('.channel-length').css('background', '#6B8983');
+        $('.needle').css('background', '#6B8983');
+        $('.s1-success').css('background', 'none');
+        $('.needle').addClass('needle-on');
+        $('.access').removeAttr('tabindex');
+        $('.access').css('cursor', 'default');
+        $('.access').off('click');
+        $('.s1-fail').fadeIn(500);
+        $('.s1-submit, .s1-fail, .btn1').attr('tabindex');
+        $('.s1-submit, .s1-fail, .btn1').attr('role', 'button');
+        $('.s1-submit, .s1-fail, .btn1').css('cursor', 'pointer');
+        $('.s1-submit, .s1-fail, .btn1').on('click', function(e){
+            audioSwitchOff();
+            audioPlaySong1.pause();
+        })   
+        audioTape.play();
+        setTimeout(function(){
+            playSong1();
+        }, 2400);
+    }
 }
 
-//Submit Sequence 1
-const submitSequence1 = () => {
-    let status = "check";
-    $('.button').click( function(){
-        if (sequenceCheck1[0].complete === true && sequenceCheck1[1].complete === true && sequenceCheck1[2].complete === true) {
-            console.log("We Good");
-            status = true;
-            failCheck1.pop(status);
-            failCheck1.push(status)
-            console.log(failCheck1);
-        $('.success').fadeIn(400);
-            audioBell.pause();
-            audioBell.play();
-        } else {
-            status = false;
-            console.log("We not good");
-            $('.success').hide();
-            $('.fail').fadeIn(300);
-            failCheck1.pop(status);
-            failCheck1.push(status);
-            console.log(failCheck1);
-                audioDud.pause();
-                audioDud.currentTime = 0;
-                audioDud.play();
-            if (failCheck1[0] === status) {
-                setTimeout(function(){
-                    $('.fail').fadeOut(300);},
-                800);
+// Main Menu Functions
+    const mainMenu = () => {
+        $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'default');
+        //Removes Attributes
+        $('.main-switch, .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').removeAttr('tabindex role');
+        $('.intro-switch').on('click', function (e) {
+            e.preventDefault();
+            $('.intro-trigger').toggleClass('intro-on');
+            if (ready === true) {
+                ready = false;
+                audioSwitchOff();
+            } else {
+                ready = true;
+                audioSwitchOn();
             }
-        }
-    })
-}
+        })
+    }
+    const mainMenuStart = () => {
+        $('.intro-button').on('click', function (e) {
+            console.log(ready);
+            e.preventDefault();
+            if (ready === true) {
+                audioSuccess();
+                sequenceOne();
+                sequenceTwo();
+                $('.text, .intro, .mode').hide();
+                $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'pointer');
+                $('.main-switch .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch-2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('role', 'button');
+                $('.main-switch, .s1-switch-1, .s1-switch-2, .s1-submit, .s2-switch-1, .s2-switch2, .s2-switch-3, .s2-switch-4, .s2-switch-5, .s2-button').attr('tabindex', '0');
+            } else {
+                audioFail();
+                $('.intro-fail').fadeIn(50);
+                setTimeout(function () {
+                    $('.intro-fail').fadeOut(50);
+                }, 800);
+            }
+        })
+    }
+//Difficulty Modes
+    const settingToggle = () => {
+        $('.mode-trigger').toggleClass('mode-trigger-on');
+        $('.radiohead, .s2-trigger-1, .s2-trigger-2, .s2-trigger-3, .s2-trigger-4, .s2-trigger-5, .main-trigger, .s1-trigger-1, .s1-trigger-2').toggleClass('hard-mode');
+    }
+    const mode = () => {
+        $('.mode').on('click', function(e) {
+            e.preventDefault();
+            if (hardMode === false) {
+                hardMode = true;
+                settingToggle();
+                audioSwitchOn();
+            } else {
+                hardMode = false;
+                audioSwitchOff();
+                settingToggle();
+            }
+        })
+    }
 
 // Test to see if sequence checks are true
     const sequenceCheck1 = [1, 2, 3];
+    const sequenceCheck2 = [1, 2, 3, 4, 5]
     const failCheck1 = [];
+    const failCheck2 = [];
+    const finalCheck = [1, 2];    
+
+// Main Menu Variables
+    let ready = false
+    let hardMode = false;
 
 //Audio Logic
+    const audioPlaySong1 = $('#play-song-1')[0];
     const audioSwitch1 = $('#audio-switch-1')[0];
     const audioSwitch2 = $('#audio-switch-2')[0];
     const audioSwitch3 = $('#audio-switch-3')[0];
@@ -176,7 +478,6 @@ const submitSequence1 = () => {
         audioSwitch2.currentTime = 0;
         audioSwitch1.play();
     }
-
     const audioSuccess = () => {
         audioBell.pause();
         audioDud.pause();
@@ -184,7 +485,6 @@ const submitSequence1 = () => {
         audioDud.currentTime = 0;
         audioBell.play();
     }
-
     const audioFail = () => {
         audioBell.pause();
         audioDud.pause();
@@ -193,88 +493,34 @@ const submitSequence1 = () => {
         audioDud.play()
     }
 
-    
-
-//Sequence1
+    // Play Song
+    const playSong1 = () => {
+        audioPlaySong1.play();
+    }
+    //Sequence1
     const sequenceOne = () => {
         mainSwitch();
         switch1();
         switch2();
         submitSequence1();
     }
-//Sequence1
+    //Sequence1
     const sequenceTwo = () => {
-        switch1();
-        switch2();
-        switch3();
-        switch4();
-        switch5();
+        s2Switch1();
+        s2Switch2();
+        s2Switch3();
+        s2Switch4();
+        s2Switch5();
         submitSequence2();
     }
+//Final Sequence 
+    finalSequenceCheck();
 
-// Main Menu
-const mainMenu = () => {
-    let ready = false
-    $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'default');
-    //Removes Attributes
-    $('.s1-switch-1, .s1-switch-2, .s1-submit').removeAttr('tabindex role');
-    $('.intro-switch').on('click', function (e) {
-        e.preventDefault();
-        $('.intro-trigger').toggleClass('intro-on');
-        if (ready === true) {
-            ready = false;
-            audioSwitchOff();
-        } else {
-            ready = true;
-            audioSwitchOn();
-            
-        }
-        console.log(ready);
-    })
-    $('.intro-button').on('click', function (e) {
-        console.log(ready);
-        e.preventDefault();
-        if (ready === true) {
-            audioSuccess();
-            $('.text, .intro, .mode').hide();
-            $('.s1-switch-1, .s1-switch-2, .s1-trigger-1, .s1-trigger-2, .s1-switch-length-1, .s1-switch-length-2, .s1-button, .s1-fail, .s1-success, .s1-submit').css('cursor', 'pointer');
-
-
-            $('.s1-switch-1, .s1-switch-2, .s1-submit').attr('role', 'button');
-            $('.s1-switch-1, .s1-switch-2, .s1-submit').attr('tabindex', '0');
-        } else {
-            audioFail();
-            $('.intro-fail').fadeIn(50);
-            setTimeout(function(){
-                $('.intro-fail').fadeOut(50);
-            }, 800);
-        }
-    })
-}
-//Difficulty Modes
-let hardMode = false
-const settingToggle = () => {
-    $('.mode-trigger').toggleClass('mode-trigger-on');
-    $('.radiohead, .s2-trigger-1, .s2-trigger-2, .s2-trigger-3, .s2-trigger-4, .s2-trigger-5, .main-trigger, .s1-trigger-1, .s1-trigger-2').toggleClass('hard-mode');
-}
-const mode = () => {
-    $('.mode').on('click', function(e) {
-        e.preventDefault();
-        if (hardMode === false) {
-            hardMode = true;
-            settingToggle();
-            audioSwitchOn();
-        } else {
-            hardMode = false;
-            audioSwitchOff();
-            settingToggle();
-        }
-    })
-}
 //Doc Ready
-$(function(){
-    console.log("ready");
-    mainMenu();
-    mode();
+    $(function(){
+        mainMenu();
+        mainMenuStart();
+        mode();
 
-})
+
+    })
