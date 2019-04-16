@@ -1,47 +1,47 @@
 //Sequence 1
 //Gets Status of Main Switch
-const mainSwitch = () => {
-    let switchProp = {
-        name: 'Main Switch',
-        sequence: 0,
-        complete: false
+    const mainSwitch = () => {
+        let switchProp = {
+            name: 'Main Switch',
+            sequence: 0,
+            complete: false
+        }
+        $('.main-switch').on('click keypress', function (e) {
+            e.preventDefault();
+            if (e.keyCode == 13 || e.KeyCode == 32) {
+                
+            }
+            $('.main-trigger').toggleClass('main-trigger-on');
+            if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 0) {
+                switchProp.sequence = 1;
+                switchProp.complete = false;
+                sequenceCheck1.splice(0, 1, switchProp);
+                audioSwitchOff();
+            } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 1) {
+                switchProp.sequence = 2;
+                switchProp.complete = false;
+                sequenceCheck1.splice(0, 1, switchProp);
+                audioSwitchOff();
+            } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 2) {
+                switchProp.sequence = 3;
+                switchProp.complete = true;
+                sequenceCheck1.splice(0, 1, switchProp);
+                $('.main-trigger').css('background', '#E78B2E'); 
+                audioSwitchOn();
+            } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 3 && hardMode === false) {
+                switchProp.complete = false;
+                switchProp.sequence = 0;
+                sequenceCheck1.splice(0, 1, switchProp);
+                $('.main-trigger').css('background', '#6B8983'); audioSwitchOff();
+            } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 3 && hardMode === true){
+                switchProp.complete = false;
+                switchProp.sequence = 0;
+                sequenceCheck1.splice(0, 1, switchProp);
+                audioSwitchOff();
+                $('.main-trigger').css('background', '#E78B2E'); 
+            }
+        })
     }
-    $('.main-switch').on('click keypress', function (e) {
-        e.preventDefault();
-        if (e.keyCode == 13 || e.KeyCode == 32) {
-            
-        }
-        $('.main-trigger').toggleClass('main-trigger-on');
-        if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 0) {
-            switchProp.sequence = 1;
-            switchProp.complete = false;
-            sequenceCheck1.splice(0, 1, switchProp);
-            audioSwitchOff();
-        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 1) {
-            switchProp.sequence = 2;
-            switchProp.complete = false;
-            sequenceCheck1.splice(0, 1, switchProp);
-            audioSwitchOff();
-        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 2) {
-            switchProp.sequence = 3;
-            switchProp.complete = true;
-            sequenceCheck1.splice(0, 1, switchProp);
-            $('.main-trigger').css('background', '#E78B2E'); 
-            audioSwitchOn();
-        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 3 && hardMode === false) {
-            switchProp.complete = false;
-            switchProp.sequence = 0;
-            sequenceCheck1.splice(0, 1, switchProp);
-            $('.main-trigger').css('background', '#6B8983'); audioSwitchOff();
-        } else if ((e.keyCode == 13 || e.KeyCode == 32) || switchProp.sequence === 3 && hardMode === true){
-            switchProp.complete = false;
-            switchProp.sequence = 0;
-            sequenceCheck1.splice(0, 1, switchProp);
-            audioSwitchOff();
-            $('.main-trigger').css('background', '#E78B2E'); 
-        }
-    })
-}
 //Gets Status of Sequence 1 Switch 1
     const switch1 = () => {
         let switchProp = {
@@ -111,35 +111,35 @@ const mainSwitch = () => {
 
 // Sequence 2
 // Get Status of Sequence 2 Switch 1
-const s2Switch1 = () => {
-    let switchProp ={
-        name: 'S2 Switch 1',
-        sequence: 0,
-        complete: false
-    }
-    $('.s2-switch-1').on('click', function(e){
-        e.preventDefault();
-        if (switchProp.sequence === 0) {
-            $('.s2-trigger-1').addClass('s2-trigger-1-pos-1');
-            switchProp.sequence = 1;
-            sequenceCheck2.splice(0, 1, switchProp)
-            audioSwitchOff();
-        } else if (switchProp.sequence === 1) {
-            $('.s2-trigger-1').removeClass('s2-trigger-1-pos-1');
-            $('.s2-trigger-1').addClass('s2-trigger-1-pos-2');
-            switchProp.sequence = 2;
-            switchProp.complete = true;
-            sequenceCheck2.splice(0, 1, switchProp);
-            audioSwitchOn();
-        } else {
-            $('.s2-trigger-1').removeClass('s2-trigger-1-pos-1 s2-trigger-1-pos-2');
-            switchProp.sequence = 0;
-            switchProp.complete = false;
-            sequenceCheck2.splice(0, 1, switchProp);
-            audioSwitchOff();
+    const s2Switch1 = () => {
+        let switchProp ={
+            name: 'S2 Switch 1',
+            sequence: 0,
+            complete: false
         }
-    })
-}
+        $('.s2-switch-1').on('click', function(e){
+            e.preventDefault();
+            if (switchProp.sequence === 0) {
+                $('.s2-trigger-1').addClass('s2-trigger-1-pos-1');
+                switchProp.sequence = 1;
+                sequenceCheck2.splice(0, 1, switchProp)
+                audioSwitchOff();
+            } else if (switchProp.sequence === 1) {
+                $('.s2-trigger-1').removeClass('s2-trigger-1-pos-1');
+                $('.s2-trigger-1').addClass('s2-trigger-1-pos-2');
+                switchProp.sequence = 2;
+                switchProp.complete = true;
+                sequenceCheck2.splice(0, 1, switchProp);
+                audioSwitchOn();
+            } else {
+                $('.s2-trigger-1').removeClass('s2-trigger-1-pos-1 s2-trigger-1-pos-2');
+                switchProp.sequence = 0;
+                switchProp.complete = false;
+                sequenceCheck2.splice(0, 1, switchProp);
+                audioSwitchOff();
+            }
+        })
+    }
 // Get Status of Sequence 2 Switch 2
 const s2Switch2 = () => {
     let switchProp = {
@@ -203,79 +203,79 @@ const s2Switch3 = () => {
     })
 }
 // Get Status of Sequence 2 Switch 4
-const s2Switch4 = () => {
-    let switchProp = {
-        name: 'S2 Switch 4',
-        sequence: 0,
-        complete: false
-    }
-    $('.s2-switch-4').on('click', function (e) {
-        e.preventDefault();
-        if (switchProp.sequence === 0) {
-            $('.s2-trigger-4').removeClass('s2-trigger-4-pos-2');
-            $('.s2-trigger-4').addClass('s2-trigger-4-pos-1');
-            switchProp.sequence = 1;
-            sequenceCheck2.splice(3, 1, switchProp);
-            audioSwitchOff();
-        } else if (switchProp.sequence === 1) {
-            $('.s2-trigger-4').removeClass('s2-trigger-4-pos-1');
-            switchProp.sequence = 2
-            sequenceCheck2.splice(3, 1, switchProp);
-            audioSwitchOff();
-        } else if (switchProp.sequence === 2) {
-            $('.s2-trigger-4').addClass('s2-trigger-4-pos-1 s2-trigger-4-pos-2');
-            switchProp.sequence = 3
-            switchProp.complete = true;
-            sequenceCheck2.splice(3, 1, switchProp);
-            audioSwitchOn();
-        } else if (switchProp.complete === true) {
-            $('.s2-trigger-4').removeClass('s2-trigger-4-pos-1 s2-trigger-4-pos-2');
-            switchProp.sequence = 0;
-            switchProp.complete = false;
-            sequenceCheck2.splice(3, 1, switchProp);
-            audioSwitchOff();
+    const s2Switch4 = () => {
+        let switchProp = {
+            name: 'S2 Switch 4',
+            sequence: 0,
+            complete: false
         }
-    })
-}
+        $('.s2-switch-4').on('click', function (e) {
+            e.preventDefault();
+            if (switchProp.sequence === 0) {
+                $('.s2-trigger-4').removeClass('s2-trigger-4-pos-2');
+                $('.s2-trigger-4').addClass('s2-trigger-4-pos-1');
+                switchProp.sequence = 1;
+                sequenceCheck2.splice(3, 1, switchProp);
+                audioSwitchOff();
+            } else if (switchProp.sequence === 1) {
+                $('.s2-trigger-4').removeClass('s2-trigger-4-pos-1');
+                switchProp.sequence = 2
+                sequenceCheck2.splice(3, 1, switchProp);
+                audioSwitchOff();
+            } else if (switchProp.sequence === 2) {
+                $('.s2-trigger-4').addClass('s2-trigger-4-pos-1 s2-trigger-4-pos-2');
+                switchProp.sequence = 3
+                switchProp.complete = true;
+                sequenceCheck2.splice(3, 1, switchProp);
+                audioSwitchOn();
+            } else if (switchProp.complete === true) {
+                $('.s2-trigger-4').removeClass('s2-trigger-4-pos-1 s2-trigger-4-pos-2');
+                switchProp.sequence = 0;
+                switchProp.complete = false;
+                sequenceCheck2.splice(3, 1, switchProp);
+                audioSwitchOff();
+            }
+        })
+    }
 // Get Status of Sequence 2 Switch 5
-const s2Switch5 = () => {
-    let switchProp = {
-        name: 'S2 Switch 5',
-        sequence: 0,
-        complete: false
-    }
-    $('.s2-switch-5').on('click', function (e) {
-        e.preventDefault();
-        if (switchProp.sequence === 0) {
-            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-2');
-            $('.s2-trigger-5').addClass('s2-trigger-5-pos-1');
-            switchProp.sequence = 1;
-            sequenceCheck2.splice(4, 1, switchProp)
-            audioSwitchOff();
-        } else if (switchProp.sequence === 1) {
-            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-1');
-            $('.s2-trigger-5').addClass('s2-trigger-5-pos-2');
-            switchProp.sequence = 2;
-            switchProp.complete = true;
-            sequenceCheck2.splice(4, 1, switchProp);
-            audioSwitchOn();
-        } else if (switchProp.sequence === 2) {
-            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-2');
-            $('.s2-trigger-5').addClass('s2-trigger-5-pos-1');
-            switchProp.sequence = 3;
-            switchProp.complete = false;
-            sequenceCheck2.splice(4, 1, switchProp);
-            audioSwitchOff();
-        } else {
-            $('.s2-trigger-5').removeClass('s2-trigger-5-pos-1');
-            switchProp.sequence = 0;
-            sequenceCheck2.splice(4, 1, switchProp);
-            audioSwitchOff();
+    const s2Switch5 = () => {
+        let switchProp = {
+            name: 'S2 Switch 5',
+            sequence: 0,
+            complete: false
         }
-    })
-}
+        $('.s2-switch-5').on('click', function (e) {
+            e.preventDefault();
+            if (switchProp.sequence === 0) {
+                $('.s2-trigger-5').removeClass('s2-trigger-5-pos-2');
+                $('.s2-trigger-5').addClass('s2-trigger-5-pos-1');
+                switchProp.sequence = 1;
+                sequenceCheck2.splice(4, 1, switchProp)
+                audioSwitchOff();
+            } else if (switchProp.sequence === 1) {
+                $('.s2-trigger-5').removeClass('s2-trigger-5-pos-1');
+                $('.s2-trigger-5').addClass('s2-trigger-5-pos-2');
+                switchProp.sequence = 2;
+                switchProp.complete = true;
+                sequenceCheck2.splice(4, 1, switchProp);
+                audioSwitchOn();
+            } else if (switchProp.sequence === 2) {
+                $('.s2-trigger-5').removeClass('s2-trigger-5-pos-2');
+                $('.s2-trigger-5').addClass('s2-trigger-5-pos-1');
+                switchProp.sequence = 3;
+                switchProp.complete = false;
+                sequenceCheck2.splice(4, 1, switchProp);
+                audioSwitchOff();
+            } else {
+                $('.s2-trigger-5').removeClass('s2-trigger-5-pos-1');
+                switchProp.sequence = 0;
+                sequenceCheck2.splice(4, 1, switchProp);
+                audioSwitchOff();
+            }
+        })
+    }
 //Submit Sequences
-    //Submit Sequence 1
+//Submit Sequence 1
     const submitSequence1 = () => {
         let status = {
             name: "Sequence 1",
@@ -340,32 +340,31 @@ const s2Switch5 = () => {
 
 //Final Sequence Check
 
-const finalSequenceCheck = () => {
-    if (finalCheck[0].complete === true && finalCheck[1].complete === true) {
-        $('.radiohead').css('background', '#E78B2E');
-        $('.channel').css('background', '#B2F7E9');
-        $('.channel-length').css('background', '#6B8983');
-        $('.needle').css('background', '#6B8983');
-        $('.s1-success').css('background', 'none');
-        $('.needle').addClass('needle-on');
-        $('.access').removeAttr('tabindex');
-        $('.access').css('cursor', 'default');
-        $('.access').off('click');
-        $('.s1-fail').fadeIn(500);
-        $('.s1-submit, .s1-fail, .btn1').attr('tabindex');
-        $('.s1-submit, .s1-fail, .btn1').attr('role', 'button');
-        $('.s1-submit, .s1-fail, .btn1').css('cursor', 'pointer');
-        $('.s1-submit, .s1-fail, .btn1').on('click', function(e){
-            audioSwitchOff();
-            // audioSwitch3.play();
-            audioPlaySong1.pause();
-        })   
-        audioTape.play();
-        setTimeout(function(){
-            playSong1();
-        }, 2400);
+    const finalSequenceCheck = () => {
+        if (finalCheck[0].complete === true && finalCheck[1].complete === true) {
+            $('.radiohead').css('background', '#E78B2E');
+            $('.channel').css('background', '#B2F7E9');
+            $('.channel-length').css('background', '#6B8983');
+            $('.needle').css('background', '#6B8983');
+            $('.s1-success').css('background', 'none');
+            $('.needle').addClass('needle-on');
+            $('.access').removeAttr('tabindex');
+            $('.access').css('cursor', 'default');
+            $('.access').off('click');
+            $('.s1-fail').fadeIn(500);
+            $('.s1-submit, .s1-fail, .btn1').attr('tabindex');
+            $('.s1-submit, .s1-fail, .btn1').attr('role', 'button');
+            $('.s1-submit, .s1-fail, .btn1').css('cursor', 'pointer');
+            $('.s1-submit, .s1-fail, .btn1').on('click', function(e){
+                audioSwitchOff();
+                audioPlaySong1.pause();
+            })   
+                audioTape.play();
+                setTimeout(function(){
+                playSong1();
+            }, 2400);
+        }
     }
-}
 
 // Main Menu Functions
     const mainMenu = () => {
@@ -501,6 +500,4 @@ const finalSequenceCheck = () => {
         mainMenu();
         mainMenuStart();
         mode();
-
-
     })
